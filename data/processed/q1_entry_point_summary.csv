@@ -1,0 +1,13 @@
+detection_group,detection_region,avg_weekday_crz_entries,share_pct,peak_hour,lat,lon
+East 60th St,East 60th St,75517.0,15.3,16,40.7625,-73.964
+FDR Drive at 60th St,FDR Drive,51462.0,10.4,9,40.759,-73.958
+West Side Highway at 60th St,West Side Highway,45081.0,9.1,8,40.7735,-73.992
+Queens Midtown Tunnel,Queens,44876.0,9.1,8,40.744,-73.971
+Lincoln Tunnel,New Jersey,42957.0,8.7,6,40.76,-74.002
+Holland Tunnel,New Jersey,40914.0,8.3,6,40.726,-74.01
+Williamsburg Bridge,Brooklyn,39455.0,8.0,7,40.718,-73.986
+West 60th St,West 60th St,38221.0,7.8,18,40.77,-73.985
+Queensboro Bridge,Queens,36868.0,7.5,7,40.759,-73.962
+Manhattan Bridge,Brooklyn,28285.0,5.7,9,40.714,-73.993
+Brooklyn Bridge,Brooklyn,26679.0,5.4,9,40.712,-74.003
+Hugh L. Carey Tunnel,Brooklyn,22425.0,4.6,8,40.704,-74.014

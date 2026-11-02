@@ -1,0 +1,13 @@
+vehicle_class,time_period,avg_daily_2025,avg_daily_2026,pct_change,months_compared
+"1 - Cars, Pickups and Vans",Overnight,56880.0,53308.0,-6.3,2-9
+"1 - Cars, Pickups and Vans",Peak,227238.0,209722.0,-7.7,2-9
+2 - Single-Unit Trucks,Overnight,3028.0,3276.0,8.2,2-9
+2 - Single-Unit Trucks,Peak,15168.0,14461.0,-4.7,2-9
+3 - Multi-Unit Trucks,Overnight,379.0,282.0,-25.5,2-9
+3 - Multi-Unit Trucks,Peak,788.0,612.0,-22.4,2-9
+4 - Buses,Overnight,1007.0,988.0,-1.9,2-9
+4 - Buses,Peak,7111.0,6670.0,-6.2,2-9
+5 - Motorcycles,Overnight,348.0,230.0,-33.8,2-9
+5 - Motorcycles,Peak,1613.0,1104.0,-31.5,2-9
+TLC Taxi/FHV,Overnight,55109.0,57728.0,4.8,2-9
+TLC Taxi/FHV,Peak,126900.0,127620.0,0.6,2-9

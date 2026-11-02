@@ -1,0 +1,97 @@
+detection_group,hour_of_day,crz_entries,excluded_roadway_entries,excluded_share_pct,toll_period
+Brooklyn Bridge,0,301558,237737,44.1,Overnight
+Brooklyn Bridge,1,206586,155722,43.0,Overnight
+Brooklyn Bridge,2,157110,117105,42.7,Overnight
+Brooklyn Bridge,3,175869,119131,40.4,Overnight
+Brooklyn Bridge,4,372597,220159,37.1,Overnight
+Brooklyn Bridge,5,395657,442868,52.8,Peak
+Brooklyn Bridge,6,555863,665869,54.5,Peak
+Brooklyn Bridge,7,617698,559865,47.5,Peak
+Brooklyn Bridge,8,652452,463881,41.6,Peak
+Brooklyn Bridge,9,661682,421391,38.9,Peak
+Brooklyn Bridge,10,632863,386727,37.9,Peak
+Brooklyn Bridge,11,603347,381219,38.7,Peak
+Brooklyn Bridge,12,577383,395174,40.6,Peak
+Brooklyn Bridge,13,586116,427551,42.2,Peak
+Brooklyn Bridge,14,614904,457650,42.7,Peak
+Brooklyn Bridge,15,616411,445017,41.9,Peak
+Brooklyn Bridge,16,627753,455986,42.1,Peak
+Brooklyn Bridge,17,636966,503630,44.2,Peak
+Brooklyn Bridge,18,630056,509640,44.7,Peak
+Brooklyn Bridge,19,599923,459999,43.4,Peak
+Brooklyn Bridge,20,571380,425501,42.7,Peak
+Brooklyn Bridge,21,653158,396125,37.8,Overnight
+Brooklyn Bridge,22,595039,379331,38.9,Overnight
+Brooklyn Bridge,23,496974,321526,39.3,Overnight
+FDR Drive at 60th St,0,399744,350899,46.7,Overnight
+FDR Drive at 60th St,1,273140,215865,44.1,Overnight
+FDR Drive at 60th St,2,224233,158962,41.5,Overnight
+FDR Drive at 60th St,3,226748,136854,37.6,Overnight
+FDR Drive at 60th St,4,447270,208889,31.8,Overnight
+FDR Drive at 60th St,5,659451,509118,43.6,Peak
+FDR Drive at 60th St,6,1111323,741767,40.0,Peak
+FDR Drive at 60th St,7,1286502,733314,36.3,Peak
+FDR Drive at 60th St,8,1489910,655992,30.6,Peak
+FDR Drive at 60th St,9,1510165,578536,27.7,Peak
+FDR Drive at 60th St,10,1387527,549897,28.4,Peak
+FDR Drive at 60th St,11,1338384,598518,30.9,Peak
+FDR Drive at 60th St,12,1310390,660417,33.5,Peak
+FDR Drive at 60th St,13,1279644,719870,36.0,Peak
+FDR Drive at 60th St,14,1276789,784729,38.1,Peak
+FDR Drive at 60th St,15,1256578,842221,40.1,Peak
+FDR Drive at 60th St,16,1235468,834486,40.3,Peak
+FDR Drive at 60th St,17,1237708,784865,38.8,Peak
+FDR Drive at 60th St,18,1260020,744946,37.2,Peak
+FDR Drive at 60th St,19,1173425,740386,38.7,Peak
+FDR Drive at 60th St,20,1046052,686361,39.6,Peak
+FDR Drive at 60th St,21,1032806,601580,36.8,Overnight
+FDR Drive at 60th St,22,957329,522046,35.3,Overnight
+FDR Drive at 60th St,23,766831,455055,37.2,Overnight
+Hugh L. Carey Tunnel,0,56344,25731,31.4,Overnight
+Hugh L. Carey Tunnel,1,42282,14709,25.8,Overnight
+Hugh L. Carey Tunnel,2,48244,19156,28.4,Overnight
+Hugh L. Carey Tunnel,3,59601,18596,23.8,Overnight
+Hugh L. Carey Tunnel,4,102405,31290,23.4,Overnight
+Hugh L. Carey Tunnel,5,278400,152195,35.3,Peak
+Hugh L. Carey Tunnel,6,708786,447081,38.7,Peak
+Hugh L. Carey Tunnel,7,891828,446196,33.3,Peak
+Hugh L. Carey Tunnel,8,965150,396910,29.1,Peak
+Hugh L. Carey Tunnel,9,935198,385887,29.2,Peak
+Hugh L. Carey Tunnel,10,730527,302483,29.3,Peak
+Hugh L. Carey Tunnel,11,611629,274809,31.0,Peak
+Hugh L. Carey Tunnel,12,576442,276373,32.4,Peak
+Hugh L. Carey Tunnel,13,572819,287191,33.4,Peak
+Hugh L. Carey Tunnel,14,585867,288092,33.0,Peak
+Hugh L. Carey Tunnel,15,613918,268467,30.4,Peak
+Hugh L. Carey Tunnel,16,506510,181416,26.4,Peak
+Hugh L. Carey Tunnel,17,421489,160292,27.6,Peak
+Hugh L. Carey Tunnel,18,415549,164745,28.4,Peak
+Hugh L. Carey Tunnel,19,441591,213755,32.6,Peak
+Hugh L. Carey Tunnel,20,328352,160926,32.9,Peak
+Hugh L. Carey Tunnel,21,266126,122590,31.5,Overnight
+Hugh L. Carey Tunnel,22,223478,95867,30.0,Overnight
+Hugh L. Carey Tunnel,23,157230,54698,25.8,Overnight
+West Side Highway at 60th St,0,296272,27777,8.6,Overnight
+West Side Highway at 60th St,1,219319,13402,5.8,Overnight
+West Side Highway at 60th St,2,201547,9452,4.5,Overnight
+West Side Highway at 60th St,3,216957,8253,3.7,Overnight
+West Side Highway at 60th St,4,414573,9598,2.3,Overnight
+West Side Highway at 60th St,5,633513,28030,4.2,Peak
+West Side Highway at 60th St,6,1281850,124623,8.9,Peak
+West Side Highway at 60th St,7,1495071,149421,9.1,Peak
+West Side Highway at 60th St,8,1593977,128865,7.5,Peak
+West Side Highway at 60th St,9,1486050,120520,7.5,Peak
+West Side Highway at 60th St,10,1256729,118104,8.6,Peak
+West Side Highway at 60th St,11,1070509,101355,8.6,Peak
+West Side Highway at 60th St,12,1003636,108702,9.8,Peak
+West Side Highway at 60th St,13,1001831,124090,11.0,Peak
+West Side Highway at 60th St,14,1077675,168276,13.5,Peak
+West Side Highway at 60th St,15,1096783,237392,17.8,Peak
+West Side Highway at 60th St,16,1104634,239381,17.8,Peak
+West Side Highway at 60th St,17,1143427,211218,15.6,Peak
+West Side Highway at 60th St,18,1120559,177975,13.7,Peak
+West Side Highway at 60th St,19,896063,134516,13.1,Peak
+West Side Highway at 60th St,20,688135,76362,10.0,Peak
+West Side Highway at 60th St,21,726796,53927,6.9,Overnight
+West Side Highway at 60th St,22,666513,47488,6.7,Overnight
+West Side Highway at 60th St,23,495576,33003,6.2,Overnight

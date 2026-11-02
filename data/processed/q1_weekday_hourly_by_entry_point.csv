@@ -1,0 +1,289 @@
+detection_group,detection_region,hour_of_day,avg_crz_entries,avg_excluded_entries
+Brooklyn Bridge,Brooklyn,0,641.6,505.8
+Brooklyn Bridge,Brooklyn,1,439.5,331.3
+Brooklyn Bridge,Brooklyn,2,334.3,249.2
+Brooklyn Bridge,Brooklyn,3,374.2,253.5
+Brooklyn Bridge,Brooklyn,4,792.8,468.4
+Brooklyn Bridge,Brooklyn,5,841.8,942.3
+Brooklyn Bridge,Brooklyn,6,1182.7,1416.7
+Brooklyn Bridge,Brooklyn,7,1314.3,1191.2
+Brooklyn Bridge,Brooklyn,8,1388.2,987.0
+Brooklyn Bridge,Brooklyn,9,1407.8,896.6
+Brooklyn Bridge,Brooklyn,10,1346.5,822.8
+Brooklyn Bridge,Brooklyn,11,1283.7,811.1
+Brooklyn Bridge,Brooklyn,12,1228.5,840.8
+Brooklyn Bridge,Brooklyn,13,1247.1,909.7
+Brooklyn Bridge,Brooklyn,14,1308.3,973.7
+Brooklyn Bridge,Brooklyn,15,1311.5,946.8
+Brooklyn Bridge,Brooklyn,16,1335.6,970.2
+Brooklyn Bridge,Brooklyn,17,1355.2,1071.6
+Brooklyn Bridge,Brooklyn,18,1340.5,1084.3
+Brooklyn Bridge,Brooklyn,19,1276.4,978.7
+Brooklyn Bridge,Brooklyn,20,1215.7,905.3
+Brooklyn Bridge,Brooklyn,21,1389.7,842.8
+Brooklyn Bridge,Brooklyn,22,1266.0,807.1
+Brooklyn Bridge,Brooklyn,23,1057.4,684.1
+East 60th St,East 60th St,0,2147.0,0.0
+East 60th St,East 60th St,1,1408.0,0.0
+East 60th St,East 60th St,2,1017.9,0.0
+East 60th St,East 60th St,3,974.1,0.0
+East 60th St,East 60th St,4,1352.0,0.0
+East 60th St,East 60th St,5,1553.1,0.0
+East 60th St,East 60th St,6,2389.7,0.0
+East 60th St,East 60th St,7,3256.7,0.0
+East 60th St,East 60th St,8,3719.4,0.0
+East 60th St,East 60th St,9,3712.9,0.0
+East 60th St,East 60th St,10,3672.1,0.0
+East 60th St,East 60th St,11,3644.3,0.0
+East 60th St,East 60th St,12,3691.2,0.0
+East 60th St,East 60th St,13,3697.2,0.0
+East 60th St,East 60th St,14,3845.3,0.0
+East 60th St,East 60th St,15,4203.8,0.0
+East 60th St,East 60th St,16,4394.0,0.0
+East 60th St,East 60th St,17,4235.0,0.0
+East 60th St,East 60th St,18,4276.2,0.0
+East 60th St,East 60th St,19,4185.5,0.0
+East 60th St,East 60th St,20,3692.4,0.0
+East 60th St,East 60th St,21,3742.5,0.0
+East 60th St,East 60th St,22,3590.0,0.0
+East 60th St,East 60th St,23,3117.0,0.0
+FDR Drive at 60th St,FDR Drive,0,850.5,746.6
+FDR Drive at 60th St,FDR Drive,1,581.1,459.3
+FDR Drive at 60th St,FDR Drive,2,477.1,338.2
+FDR Drive at 60th St,FDR Drive,3,482.4,291.2
+FDR Drive at 60th St,FDR Drive,4,951.6,444.4
+FDR Drive at 60th St,FDR Drive,5,1403.1,1083.2
+FDR Drive at 60th St,FDR Drive,6,2364.5,1578.2
+FDR Drive at 60th St,FDR Drive,7,2737.2,1560.2
+FDR Drive at 60th St,FDR Drive,8,3170.0,1395.7
+FDR Drive at 60th St,FDR Drive,9,3213.1,1230.9
+FDR Drive at 60th St,FDR Drive,10,2952.2,1170.0
+FDR Drive at 60th St,FDR Drive,11,2847.6,1273.4
+FDR Drive at 60th St,FDR Drive,12,2788.1,1405.1
+FDR Drive at 60th St,FDR Drive,13,2722.6,1531.6
+FDR Drive at 60th St,FDR Drive,14,2716.6,1669.6
+FDR Drive at 60th St,FDR Drive,15,2673.6,1792.0
+FDR Drive at 60th St,FDR Drive,16,2628.7,1775.5
+FDR Drive at 60th St,FDR Drive,17,2633.4,1669.9
+FDR Drive at 60th St,FDR Drive,18,2680.9,1585.0
+FDR Drive at 60th St,FDR Drive,19,2496.6,1575.3
+FDR Drive at 60th St,FDR Drive,20,2225.6,1460.3
+FDR Drive at 60th St,FDR Drive,21,2197.5,1280.0
+FDR Drive at 60th St,FDR Drive,22,2036.9,1110.7
+FDR Drive at 60th St,FDR Drive,23,1631.6,968.2
+Holland Tunnel,New Jersey,0,812.5,0.0
+Holland Tunnel,New Jersey,1,664.3,0.0
+Holland Tunnel,New Jersey,2,537.6,0.0
+Holland Tunnel,New Jersey,3,525.3,0.0
+Holland Tunnel,New Jersey,4,966.8,0.0
+Holland Tunnel,New Jersey,5,1877.2,0.0
+Holland Tunnel,New Jersey,6,2415.3,0.0
+Holland Tunnel,New Jersey,7,2343.6,0.0
+Holland Tunnel,New Jersey,8,2247.1,0.0
+Holland Tunnel,New Jersey,9,2230.4,0.0
+Holland Tunnel,New Jersey,10,2104.4,0.0
+Holland Tunnel,New Jersey,11,1952.0,0.0
+Holland Tunnel,New Jersey,12,1856.1,0.0
+Holland Tunnel,New Jersey,13,1852.8,0.0
+Holland Tunnel,New Jersey,14,1952.0,0.0
+Holland Tunnel,New Jersey,15,2020.0,0.0
+Holland Tunnel,New Jersey,16,2096.3,0.0
+Holland Tunnel,New Jersey,17,2188.3,0.0
+Holland Tunnel,New Jersey,18,2231.6,0.0
+Holland Tunnel,New Jersey,19,1932.0,0.0
+Holland Tunnel,New Jersey,20,1662.5,0.0
+Holland Tunnel,New Jersey,21,1759.5,0.0
+Holland Tunnel,New Jersey,22,1635.1,0.0
+Holland Tunnel,New Jersey,23,1051.1,0.0
+Hugh L. Carey Tunnel,Brooklyn,0,119.9,54.7
+Hugh L. Carey Tunnel,Brooklyn,1,90.0,31.3
+Hugh L. Carey Tunnel,Brooklyn,2,102.6,40.8
+Hugh L. Carey Tunnel,Brooklyn,3,126.8,39.6
+Hugh L. Carey Tunnel,Brooklyn,4,217.9,66.6
+Hugh L. Carey Tunnel,Brooklyn,5,592.3,323.8
+Hugh L. Carey Tunnel,Brooklyn,6,1508.1,951.2
+Hugh L. Carey Tunnel,Brooklyn,7,1897.5,949.4
+Hugh L. Carey Tunnel,Brooklyn,8,2053.5,844.5
+Hugh L. Carey Tunnel,Brooklyn,9,1989.8,821.0
+Hugh L. Carey Tunnel,Brooklyn,10,1554.3,643.6
+Hugh L. Carey Tunnel,Brooklyn,11,1301.3,584.7
+Hugh L. Carey Tunnel,Brooklyn,12,1226.5,588.0
+Hugh L. Carey Tunnel,Brooklyn,13,1218.8,611.0
+Hugh L. Carey Tunnel,Brooklyn,14,1246.5,613.0
+Hugh L. Carey Tunnel,Brooklyn,15,1306.2,571.2
+Hugh L. Carey Tunnel,Brooklyn,16,1077.7,386.0
+Hugh L. Carey Tunnel,Brooklyn,17,896.8,341.0
+Hugh L. Carey Tunnel,Brooklyn,18,884.1,350.5
+Hugh L. Carey Tunnel,Brooklyn,19,939.6,454.8
+Hugh L. Carey Tunnel,Brooklyn,20,698.6,342.4
+Hugh L. Carey Tunnel,Brooklyn,21,566.2,260.8
+Hugh L. Carey Tunnel,Brooklyn,22,475.5,204.0
+Hugh L. Carey Tunnel,Brooklyn,23,334.5,116.4
+Lincoln Tunnel,New Jersey,0,902.3,0.0
+Lincoln Tunnel,New Jersey,1,632.6,0.0
+Lincoln Tunnel,New Jersey,2,543.9,0.0
+Lincoln Tunnel,New Jersey,3,555.0,0.0
+Lincoln Tunnel,New Jersey,4,1057.8,0.0
+Lincoln Tunnel,New Jersey,5,2146.4,0.0
+Lincoln Tunnel,New Jersey,6,3452.9,0.0
+Lincoln Tunnel,New Jersey,7,3335.1,0.0
+Lincoln Tunnel,New Jersey,8,3037.0,0.0
+Lincoln Tunnel,New Jersey,9,2748.7,0.0
+Lincoln Tunnel,New Jersey,10,2533.0,0.0
+Lincoln Tunnel,New Jersey,11,2329.8,0.0
+Lincoln Tunnel,New Jersey,12,2131.8,0.0
+Lincoln Tunnel,New Jersey,13,1886.9,0.0
+Lincoln Tunnel,New Jersey,14,1830.2,0.0
+Lincoln Tunnel,New Jersey,15,1764.8,0.0
+Lincoln Tunnel,New Jersey,16,1618.6,0.0
+Lincoln Tunnel,New Jersey,17,1492.9,0.0
+Lincoln Tunnel,New Jersey,18,1685.4,0.0
+Lincoln Tunnel,New Jersey,19,1627.4,0.0
+Lincoln Tunnel,New Jersey,20,1494.0,0.0
+Lincoln Tunnel,New Jersey,21,1545.7,0.0
+Lincoln Tunnel,New Jersey,22,1438.7,0.0
+Lincoln Tunnel,New Jersey,23,1166.3,0.0
+Manhattan Bridge,Brooklyn,0,678.4,0.0
+Manhattan Bridge,Brooklyn,1,483.3,0.0
+Manhattan Bridge,Brooklyn,2,371.2,0.0
+Manhattan Bridge,Brooklyn,3,368.4,0.0
+Manhattan Bridge,Brooklyn,4,561.8,0.0
+Manhattan Bridge,Brooklyn,5,747.1,0.0
+Manhattan Bridge,Brooklyn,6,1316.3,0.0
+Manhattan Bridge,Brooklyn,7,1661.2,0.0
+Manhattan Bridge,Brooklyn,8,1773.3,0.0
+Manhattan Bridge,Brooklyn,9,1786.0,0.0
+Manhattan Bridge,Brooklyn,10,1571.8,0.0
+Manhattan Bridge,Brooklyn,11,1379.5,0.0
+Manhattan Bridge,Brooklyn,12,1286.3,0.0
+Manhattan Bridge,Brooklyn,13,1278.9,0.0
+Manhattan Bridge,Brooklyn,14,1341.5,0.0
+Manhattan Bridge,Brooklyn,15,1298.6,0.0
+Manhattan Bridge,Brooklyn,16,1279.8,0.0
+Manhattan Bridge,Brooklyn,17,1355.8,0.0
+Manhattan Bridge,Brooklyn,18,1369.4,0.0
+Manhattan Bridge,Brooklyn,19,1331.6,0.0
+Manhattan Bridge,Brooklyn,20,1216.2,0.0
+Manhattan Bridge,Brooklyn,21,1429.4,0.0
+Manhattan Bridge,Brooklyn,22,1316.7,0.0
+Manhattan Bridge,Brooklyn,23,1082.9,0.0
+Queens Midtown Tunnel,Queens,0,797.2,0.0
+Queens Midtown Tunnel,Queens,1,472.4,0.0
+Queens Midtown Tunnel,Queens,2,330.7,0.0
+Queens Midtown Tunnel,Queens,3,336.8,0.0
+Queens Midtown Tunnel,Queens,4,575.1,0.0
+Queens Midtown Tunnel,Queens,5,1265.9,0.0
+Queens Midtown Tunnel,Queens,6,2405.4,0.0
+Queens Midtown Tunnel,Queens,7,2938.6,0.0
+Queens Midtown Tunnel,Queens,8,3135.5,0.0
+Queens Midtown Tunnel,Queens,9,3071.1,0.0
+Queens Midtown Tunnel,Queens,10,2537.7,0.0
+Queens Midtown Tunnel,Queens,11,2398.5,0.0
+Queens Midtown Tunnel,Queens,12,2331.4,0.0
+Queens Midtown Tunnel,Queens,13,2337.3,0.0
+Queens Midtown Tunnel,Queens,14,2433.9,0.0
+Queens Midtown Tunnel,Queens,15,2462.1,0.0
+Queens Midtown Tunnel,Queens,16,2440.5,0.0
+Queens Midtown Tunnel,Queens,17,2391.6,0.0
+Queens Midtown Tunnel,Queens,18,2320.4,0.0
+Queens Midtown Tunnel,Queens,19,2026.3,0.0
+Queens Midtown Tunnel,Queens,20,1736.3,0.0
+Queens Midtown Tunnel,Queens,21,1591.3,0.0
+Queens Midtown Tunnel,Queens,22,1417.5,0.0
+Queens Midtown Tunnel,Queens,23,1122.3,0.0
+Queensboro Bridge,Queens,0,633.0,0.0
+Queensboro Bridge,Queens,1,502.7,0.0
+Queensboro Bridge,Queens,2,488.1,0.0
+Queensboro Bridge,Queens,3,600.8,0.0
+Queensboro Bridge,Queens,4,1016.6,0.0
+Queensboro Bridge,Queens,5,1348.4,0.0
+Queensboro Bridge,Queens,6,2331.5,0.0
+Queensboro Bridge,Queens,7,2587.2,0.0
+Queensboro Bridge,Queens,8,2505.1,0.0
+Queensboro Bridge,Queens,9,2040.7,0.0
+Queensboro Bridge,Queens,10,1798.7,0.0
+Queensboro Bridge,Queens,11,1709.2,0.0
+Queensboro Bridge,Queens,12,1686.5,0.0
+Queensboro Bridge,Queens,13,1764.6,0.0
+Queensboro Bridge,Queens,14,1957.1,0.0
+Queensboro Bridge,Queens,15,2042.1,0.0
+Queensboro Bridge,Queens,16,2007.5,0.0
+Queensboro Bridge,Queens,17,1919.9,0.0
+Queensboro Bridge,Queens,18,1766.5,0.0
+Queensboro Bridge,Queens,19,1501.8,0.0
+Queensboro Bridge,Queens,20,1299.7,0.0
+Queensboro Bridge,Queens,21,1321.2,0.0
+Queensboro Bridge,Queens,22,1153.6,0.0
+Queensboro Bridge,Queens,23,886.0,0.0
+West 60th St,West 60th St,0,851.5,0.0
+West 60th St,West 60th St,1,545.5,0.0
+West 60th St,West 60th St,2,375.8,0.0
+West 60th St,West 60th St,3,322.6,0.0
+West 60th St,West 60th St,4,389.5,0.0
+West 60th St,West 60th St,5,521.7,0.0
+West 60th St,West 60th St,6,933.9,0.0
+West 60th St,West 60th St,7,1599.8,0.0
+West 60th St,West 60th St,8,2153.1,0.0
+West 60th St,West 60th St,9,2140.2,0.0
+West 60th St,West 60th St,10,2058.9,0.0
+West 60th St,West 60th St,11,2042.4,0.0
+West 60th St,West 60th St,12,2024.2,0.0
+West 60th St,West 60th St,13,2049.3,0.0
+West 60th St,West 60th St,14,2135.3,0.0
+West 60th St,West 60th St,15,2269.6,0.0
+West 60th St,West 60th St,16,2285.9,0.0
+West 60th St,West 60th St,17,2268.9,0.0
+West 60th St,West 60th St,18,2297.1,0.0
+West 60th St,West 60th St,19,2190.7,0.0
+West 60th St,West 60th St,20,1873.1,0.0
+West 60th St,West 60th St,21,1795.6,0.0
+West 60th St,West 60th St,22,1738.3,0.0
+West 60th St,West 60th St,23,1358.2,0.0
+West Side Highway at 60th St,West Side Highway,0,630.4,59.1
+West Side Highway at 60th St,West Side Highway,1,466.6,28.5
+West Side Highway at 60th St,West Side Highway,2,428.8,20.1
+West Side Highway at 60th St,West Side Highway,3,461.6,17.6
+West Side Highway at 60th St,West Side Highway,4,882.1,20.4
+West Side Highway at 60th St,West Side Highway,5,1347.9,59.6
+West Side Highway at 60th St,West Side Highway,6,2727.3,265.2
+West Side Highway at 60th St,West Side Highway,7,3181.0,317.9
+West Side Highway at 60th St,West Side Highway,8,3391.4,274.2
+West Side Highway at 60th St,West Side Highway,9,3161.8,256.4
+West Side Highway at 60th St,West Side Highway,10,2673.9,251.3
+West Side Highway at 60th St,West Side Highway,11,2277.7,215.6
+West Side Highway at 60th St,West Side Highway,12,2135.4,231.3
+West Side Highway at 60th St,West Side Highway,13,2131.6,264.0
+West Side Highway at 60th St,West Side Highway,14,2292.9,358.0
+West Side Highway at 60th St,West Side Highway,15,2333.6,505.1
+West Side Highway at 60th St,West Side Highway,16,2350.3,509.3
+West Side Highway at 60th St,West Side Highway,17,2432.8,449.4
+West Side Highway at 60th St,West Side Highway,18,2384.2,378.7
+West Side Highway at 60th St,West Side Highway,19,1906.5,286.2
+West Side Highway at 60th St,West Side Highway,20,1464.1,162.5
+West Side Highway at 60th St,West Side Highway,21,1546.4,114.7
+West Side Highway at 60th St,West Side Highway,22,1418.1,101.0
+West Side Highway at 60th St,West Side Highway,23,1054.4,70.2
+Williamsburg Bridge,Brooklyn,0,1106.9,0.0
+Williamsburg Bridge,Brooklyn,1,838.4,0.0
+Williamsburg Bridge,Brooklyn,2,651.9,0.0
+Williamsburg Bridge,Brooklyn,3,652.0,0.0
+Williamsburg Bridge,Brooklyn,4,1211.6,0.0
+Williamsburg Bridge,Brooklyn,5,1529.5,0.0
+Williamsburg Bridge,Brooklyn,6,1973.7,0.0
+Williamsburg Bridge,Brooklyn,7,2073.2,0.0
+Williamsburg Bridge,Brooklyn,8,1951.8,0.0
+Williamsburg Bridge,Brooklyn,9,1864.9,0.0
+Williamsburg Bridge,Brooklyn,10,1825.9,0.0
+Williamsburg Bridge,Brooklyn,11,1798.6,0.0
+Williamsburg Bridge,Brooklyn,12,1803.7,0.0
+Williamsburg Bridge,Brooklyn,13,1846.6,0.0
+Williamsburg Bridge,Brooklyn,14,1916.4,0.0
+Williamsburg Bridge,Brooklyn,15,1941.7,0.0
+Williamsburg Bridge,Brooklyn,16,1913.9,0.0
+Williamsburg Bridge,Brooklyn,17,1896.4,0.0
+Williamsburg Bridge,Brooklyn,18,1905.4,0.0
+Williamsburg Bridge,Brooklyn,19,1864.0,0.0
+Williamsburg Bridge,Brooklyn,20,1778.6,0.0
+Williamsburg Bridge,Brooklyn,21,1884.5,0.0
+Williamsburg Bridge,Brooklyn,22,1747.2,0.0
+Williamsburg Bridge,Brooklyn,23,1477.9,0.0

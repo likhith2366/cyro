@@ -1,0 +1,141 @@
+start_area,nta,borough,trips_feb2024,trips_feb2025,pct_change
+CRZ,Chelsea-Hudson Yards,Manhattan,131161.0,122368.0,-6.7
+CRZ,East Village,Manhattan,107667.0,105282.0,-2.2
+CRZ,Midtown-Times Square,Manhattan,92049.0,77208.0,-16.1
+CRZ,Midtown South-Flatiron-Union Square,Manhattan,73207.0,74882.0,2.3
+CRZ,Greenwich Village,Manhattan,65438.0,60496.0,-7.6
+CRZ,Murray Hill-Kips Bay,Manhattan,56362.0,60228.0,6.9
+CRZ,Hell's Kitchen,Manhattan,55614.0,53631.0,-3.6
+CRZ,West Village,Manhattan,51609.0,49564.0,-4.0
+CRZ,Lower East Side,Manhattan,48677.0,45031.0,-7.5
+CRZ,SoHo-Little Italy-Hudson Square,Manhattan,44313.0,42425.0,-4.3
+CRZ,Tribeca-Civic Center,Manhattan,35254.0,31723.0,-10.0
+CRZ,East Midtown-Turtle Bay,Manhattan,33286.0,31433.0,-5.6
+CRZ,Financial District-Battery Park City,Manhattan,29632.0,31363.0,5.8
+CRZ,Gramercy,Manhattan,28679.0,28384.0,-1.0
+CRZ,Chinatown-Two Bridges,Manhattan,31294.0,28047.0,-10.4
+CRZ,Stuyvesant Town-Peter Cooper Village,Manhattan,20517.0,18884.0,-8.0
+Adjacent,Upper West Side-Lincoln Square,Manhattan,18580.0,16383.0,-11.8
+Adjacent,Upper East Side-Lenox Hill-Roosevelt Island,Manhattan,15733.0,13571.0,-13.7
+Adjacent,Financial District-Battery Park City,Manhattan,11992.0,10297.0,-14.1
+Adjacent,Williamsburg,Brooklyn,8677.0,8497.0,-2.1
+Adjacent,Chelsea-Hudson Yards,Manhattan,0.0,6937.0,
+Rest of NYC,Upper West Side (Central),Manhattan,8017.0,6033.0,-24.7
+CRZ,Upper West Side-Lincoln Square,Manhattan,4677.0,5798.0,24.0
+Rest of NYC,Upper East Side-Yorkville,Manhattan,5488.0,4591.0,-16.3
+Adjacent,Upper East Side-Carnegie Hill,Manhattan,3878.0,4470.0,15.3
+Adjacent,Central Park,Manhattan,5936.0,4394.0,-26.0
+Adjacent,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn,4140.0,3979.0,-3.9
+Rest of NYC,Upper East Side-Carnegie Hill,Manhattan,3722.0,3161.0,-15.1
+Adjacent,Upper West Side (Central),Manhattan,3838.0,2854.0,-25.6
+Adjacent,Murray Hill-Kips Bay,Manhattan,3317.0,2825.0,-14.8
+CRZ,Central Park,Manhattan,1501.0,2774.0,84.8
+Rest of NYC,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn,2530.0,2276.0,-10.0
+Rest of NYC,Upper West Side-Manhattan Valley,Manhattan,3143.0,2216.0,-29.5
+Rest of NYC,East Williamsburg,Brooklyn,2240.0,2207.0,-1.5
+Adjacent,Brooklyn Heights,Brooklyn,2208.0,2048.0,-7.2
+Rest of NYC,Fort Greene,Brooklyn,2213.0,1949.0,-11.9
+Rest of NYC,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn,2272.0,1677.0,-26.2
+Adjacent,Greenpoint,Brooklyn,1563.0,1580.0,1.1
+Rest of NYC,East Harlem (South),Manhattan,2017.0,1529.0,-24.2
+Rest of NYC,Williamsburg,Brooklyn,1582.0,1463.0,-7.5
+Rest of NYC,Central Park,Manhattan,1918.0,1389.0,-27.6
+Rest of NYC,Bedford-Stuyvesant (West),Brooklyn,1230.0,1326.0,7.8
+Rest of NYC,Greenpoint,Brooklyn,1310.0,1260.0,-3.8
+Rest of NYC,Park Slope,Brooklyn,1354.0,1075.0,-20.6
+Rest of NYC,Harlem (South),Manhattan,1409.0,1043.0,-26.0
+Rest of NYC,Clinton Hill,Brooklyn,1063.0,944.0,-11.2
+Rest of NYC,Queensbridge-Ravenswood-Dutch Kills,Queens,1250.0,916.0,-26.7
+Rest of NYC,Morningside Heights,Manhattan,1240.0,912.0,-26.5
+Adjacent,Chinatown-Two Bridges,Manhattan,1050.0,835.0,-20.5
+Rest of NYC,Bedford-Stuyvesant (East),Brooklyn,855.0,740.0,-13.5
+Rest of NYC,Bushwick (West),Brooklyn,918.0,706.0,-23.1
+Rest of NYC,East Harlem (North),Manhattan,1112.0,701.0,-37.0
+Rest of NYC,Prospect Heights,Brooklyn,638.0,626.0,-1.9
+Rest of NYC,Astoria (Central),Queens,808.0,619.0,-23.4
+Adjacent,Brooklyn Navy Yard,Brooklyn,706.0,572.0,-19.0
+Rest of NYC,Crown Heights (North),Brooklyn,676.0,558.0,-17.5
+Rest of NYC,Sunnyside,Queens,716.0,551.0,-23.0
+Rest of NYC,Astoria (East)-Woodside (North),Queens,537.0,356.0,-33.7
+Rest of NYC,Ridgewood,Queens,402.0,319.0,-20.6
+Rest of NYC,South Williamsburg,Brooklyn,298.0,302.0,1.3
+Rest of NYC,Astoria (North)-Ditmars-Steinway,Queens,437.0,299.0,-31.6
+Rest of NYC,Harlem (North),Manhattan,576.0,297.0,-48.4
+Adjacent,Long Island City-Hunters Point,Queens,411.0,292.0,-29.0
+Rest of NYC,Long Island City-Hunters Point,Queens,388.0,292.0,-24.7
+Rest of NYC,Old Astoria-Hallets Point,Queens,247.0,246.0,-0.4
+Adjacent,Fort Greene,Brooklyn,188.0,239.0,27.1
+Rest of NYC,Manhattanville-West Harlem,Manhattan,449.0,233.0,-48.1
+Rest of NYC,Bushwick (East),Brooklyn,307.0,232.0,-24.4
+Rest of NYC,Sunset Park (West),Brooklyn,249.0,204.0,-18.1
+Rest of NYC,Hamilton Heights-Sugar Hill,Manhattan,327.0,196.0,-40.1
+Rest of NYC,Windsor Terrace-South Slope,Brooklyn,154.0,190.0,23.4
+Rest of NYC,Jackson Heights,Queens,179.0,179.0,0.0
+Rest of NYC,Woodside,Queens,228.0,174.0,-23.7
+Rest of NYC,Prospect Park,Brooklyn,221.0,168.0,-24.0
+Rest of NYC,Brooklyn Heights,Brooklyn,238.0,167.0,-29.8
+Rest of NYC,Prospect Lefferts Gardens-Wingate,Brooklyn,179.0,156.0,-12.8
+Rest of NYC,Crown Heights (South),Brooklyn,176.0,119.0,-32.4
+Rest of NYC,Mott Haven-Port Morris,Bronx,141.0,118.0,-16.3
+Rest of NYC,Washington Heights (South),Manhattan,233.0,113.0,-51.5
+Adjacent,Queensbridge-Ravenswood-Dutch Kills,Queens,118.0,101.0,-14.4
+Adjacent,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn,165.0,97.0,-41.2
+Rest of NYC,Concourse-Concourse Village,Bronx,121.0,90.0,-25.6
+Rest of NYC,Sunnyside Yards (South),Queens,87.0,89.0,2.3
+Rest of NYC,Brooklyn Navy Yard,Brooklyn,117.0,80.0,-31.6
+Rest of NYC,Washington Heights (North),Manhattan,188.0,76.0,-59.6
+Rest of NYC,Maspeth,Queens,84.0,68.0,-19.0
+Rest of NYC,Elmhurst,Queens,87.0,65.0,-25.3
+Rest of NYC,Sunset Park (Central),Brooklyn,95.0,64.0,-32.6
+Rest of NYC,Flatbush,Brooklyn,96.0,59.0,-38.5
+Rest of NYC,Flatbush (West)-Ditmas Park-Parkville,Brooklyn,58.0,55.0,-5.2
+Rest of NYC,Ocean Hill,Brooklyn,94.0,44.0,-53.2
+Adjacent,South Williamsburg,Brooklyn,40.0,41.0,2.5
+Rest of NYC,Randall's Island,Manhattan,33.0,40.0,21.2
+Rest of NYC,Kensington,Brooklyn,31.0,38.0,22.6
+Rest of NYC,East Flatbush-Erasmus,Brooklyn,46.0,31.0,-32.6
+Rest of NYC,Melrose,Bronx,59.0,31.0,-47.5
+Rest of NYC,Kingsbridge-Marble Hill,Bronx,6.0,30.0,400.0
+Rest of NYC,East Elmhurst,Queens,31.0,30.0,-3.2
+Rest of NYC,Astoria Park,Queens,40.0,25.0,-37.5
+Rest of NYC,Glendale,Queens,12.0,22.0,83.3
+Rest of NYC,Green-Wood Cemetery,Brooklyn,34.0,17.0,-50.0
+Rest of NYC,Highbridge,Bronx,28.0,17.0,-39.3
+Rest of NYC,Longwood,Bronx,26.0,17.0,-34.6
+Rest of NYC,Sunnyside Yards (North),Queens,14.0,17.0,21.4
+Rest of NYC,Bay Ridge,Brooklyn,5.0,17.0,240.0
+Rest of NYC,Corona,Queens,14.0,16.0,14.3
+Rest of NYC,Mount Eden-Claremont (West),Bronx,38.0,14.0,-63.2
+Rest of NYC,Crotona Park East,Bronx,7.0,13.0,85.7
+Rest of NYC,Claremont Village-Claremont (East),Bronx,20.0,12.0,-40.0
+Rest of NYC,Morrisania,Bronx,19.0,12.0,-36.8
+Rest of NYC,University Heights (South)-Morris Heights,Bronx,30.0,10.0,-66.7
+Rest of NYC,Inwood,Manhattan,36.0,10.0,-72.2
+Rest of NYC,Lincoln Terrace Park,Brooklyn,18.0,9.0,-50.0
+Rest of NYC,North Corona,Queens,13.0,7.0,-46.2
+Rest of NYC,Mount Olivet & All Faiths Cemeteries,Queens,1.0,7.0,600.0
+Rest of NYC,Fordham Heights,Bronx,4.0,7.0,75.0
+Rest of NYC,Highbridge Park,Manhattan,13.0,7.0,-46.2
+Rest of NYC,Flushing Meadows-Corona Park,Queens,0.0,6.0,
+Rest of NYC,West Farms,Bronx,2.0,6.0,200.0
+Rest of NYC,Bedford Park,Bronx,4.0,6.0,50.0
+Rest of NYC,Borough Park,Brooklyn,19.0,5.0,-73.7
+Rest of NYC,East Flatbush-Farragut,Brooklyn,1.0,5.0,400.0
+Rest of NYC,Yankee Stadium-Macombs Dam Park,Bronx,21.0,5.0,-76.2
+Rest of NYC,Calvary & Mount Zion Cemeteries,Queens,1.0,4.0,300.0
+Rest of NYC,Tremont,Bronx,3.0,4.0,33.3
+Rest of NYC,Hunts Point,Bronx,5.0,4.0,-20.0
+Rest of NYC,East Flatbush-Rugby,Brooklyn,2.0,4.0,100.0
+Rest of NYC,Crotona Park,Bronx,0.0,4.0,
+Rest of NYC,Mount Hope,Bronx,22.0,3.0,-86.4
+Rest of NYC,University Heights (North)-Fordham,Bronx,11.0,3.0,-72.7
+Rest of NYC,Claremont Park,Bronx,2.0,2.0,0.0
+Rest of NYC,Bronx Park,Bronx,0.0,2.0,
+Rest of NYC,Van Cortlandt Park,Bronx,1.0,1.0,0.0
+Rest of NYC,Brownsville,Brooklyn,1.0,1.0,0.0
+Adjacent,The Battery-Governors Island-Ellis Island-Liberty Island,Manhattan,0.0,1.0,
+CRZ,Upper East Side-Carnegie Hill,Manhattan,1218.0,0.0,-100.0
+Rest of NYC,Belmont,Bronx,4.0,0.0,-100.0
+Rest of NYC,Holy Cross Cemetery,Brooklyn,1.0,0.0,-100.0
+Rest of NYC,Inwood Hill Park,Manhattan,14.0,0.0,-100.0
+Rest of NYC,Norwood,Bronx,2.0,0.0,-100.0

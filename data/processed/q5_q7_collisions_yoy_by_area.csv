@@ -1,0 +1,13 @@
+area,year,crashes,persons_injured,persons_killed,pedestrians_injured,cyclist_injured,crashes_pct_vs_2024,persons_injured_pct_vs_2024,window
+Adjacent,2023,2444,1146,6,180,187,10.1,2.6,Jan-Sep
+Adjacent,2024,2219,1117,3,176,177,0.0,0.0,Jan-Sep
+Adjacent,2025,2424,1126,8,170,187,9.2,0.8,Jan-Sep
+Adjacent,2026,2426,1282,8,212,190,9.3,14.8,Jan-Sep
+CRZ,2023,5021,2376,9,628,615,3.9,1.6,Jan-Sep
+CRZ,2024,4833,2338,16,688,636,0.0,0.0,Jan-Sep
+CRZ,2025,4657,2258,10,677,619,-3.6,-3.4,Jan-Sep
+CRZ,2026,4868,2426,12,731,642,0.7,3.8,Jan-Sep
+Rest of NYC,2023,58838,33154,161,5310,2873,6.6,0.6,Jan-Sep
+Rest of NYC,2024,55217,32952,152,5360,2700,0.0,0.0,Jan-Sep
+Rest of NYC,2025,54415,32643,151,5364,2602,-1.5,-0.9,Jan-Sep
+Rest of NYC,2026,53190,32570,135,5305,2590,-3.7,-1.2,Jan-Sep

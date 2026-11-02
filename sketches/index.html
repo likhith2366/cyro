@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Congestion Pricing Sketches</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0"></script>
+<style>body{font-family:system-ui,sans-serif;margin:24px;background:#fff} section{margin-bottom:48px}</style>
+</head><body>
+<h1>Congestion Pricing in NYC: Milestone 2 sketches (Vega-Lite)</h1>
+<p>Serve this folder (e.g. <code>python -m http.server</code> inside <code>sketches/</code>) and open it in a browser.</p>
+<section><div id="q1_entries_when_where"></div></section>
+<section><div id="q2_entries_change"></div></section>
+<section><div id="q3_toll_avoidance"></div></section>
+<section><div id="q4_speeds"></div></section>
+<section><div id="q5_q7_crashes"></div></section>
+<section><div id="q6_transit_into_zone"></div></section>
+<section><div id="q8_area_scorecard"></div></section>
+<script>vegaEmbed("#q1_entries_when_where", "q1_entries_when_where.vl.json", {actions: true});
+vegaEmbed("#q2_entries_change", "q2_entries_change.vl.json", {actions: true});
+vegaEmbed("#q3_toll_avoidance", "q3_toll_avoidance.vl.json", {actions: true});
+vegaEmbed("#q4_speeds", "q4_speeds.vl.json", {actions: true});
+vegaEmbed("#q5_q7_crashes", "q5_q7_crashes.vl.json", {actions: true});
+vegaEmbed("#q6_transit_into_zone", "q6_transit_into_zone.vl.json", {actions: true});
+vegaEmbed("#q8_area_scorecard", "q8_area_scorecard.vl.json", {actions: true});</script>
+</body></html>

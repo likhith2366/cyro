@@ -1,0 +1,13 @@
+area,metric,window,value_2024,value_2025,pct_change
+CRZ,Taxi/FHV speed (mph),months 1-8,8.74,9.01,3.1
+Adjacent,Taxi/FHV speed (mph),months 1-8,12.6,12.46,-1.1
+Rest of NYC,Taxi/FHV speed (mph),months 1-8,16.66,16.52,-0.8
+CRZ,Crashes,Jan-Sep,4833.0,4657.0,-3.6
+CRZ,People injured,Jan-Sep,2338.0,2258.0,-3.4
+Adjacent,Crashes,Jan-Sep,2219.0,2424.0,9.2
+Adjacent,People injured,Jan-Sep,1117.0,1126.0,0.8
+Rest of NYC,Crashes,Jan-Sep,55217.0,54415.0,-1.5
+Rest of NYC,People injured,Jan-Sep,32952.0,32643.0,-0.9
+CRZ,Subway entries (station taps),Jan-Dec,501163149.0,536213455.0,7.0
+Adjacent,Subway entries (station taps),Jan-Dec,71807923.0,78169367.0,8.9
+Rest of NYC,Subway entries (station taps),Jan-Dec,638541831.0,689252002.0,7.9
