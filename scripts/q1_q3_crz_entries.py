@@ -7,7 +7,7 @@ Outputs
 """
 import pandas as pd
 
-from common import NY, columns, holidays, log_gaps, pick, save, soql, to_num, write_sample
+from m2_common import NY, columns, holidays, log_gaps, pick, save, soql, to_num, write_sample
 
 DS = "t6yz-b64h"
 

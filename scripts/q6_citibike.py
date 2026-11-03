@@ -13,7 +13,7 @@ import zipfile
 import pandas as pd
 import requests
 
-from common import RAW, join_nta, label_area, save, write_sample
+from m2_common import RAW, join_nta, label_area, save, write_sample
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--before", default="202410")

@@ -6,7 +6,7 @@ Output: data/processed/q4_speeds_monthly.csv
 """
 import pandas as pd
 
-from common import NY, columns, log_gaps, pick, save, soql, write_sample
+from m2_common import NY, columns, log_gaps, pick, save, soql, write_sample
 
 DS = "6p29-6xqn"
 
@@ -61,6 +61,6 @@ m["did_vs_rest_mph"] = m["change_mph"] - m["rest_change"]
 m = m.drop(columns="rest_change")
 m["year_month"] = m["year_month"].dt.strftime("%Y-%m")
 m = m.sort_values(["year_month", "area", "time_period"])
-save(m, "q4_speeds_monthly")
+save(m, "m2_q4_speeds_monthly")
 write_sample(m[m["year_month"] >= "2025-01"], "q4",
              note="change_mph = vs. same month of 2024; did_vs_rest_mph = inside/adjacent change minus rest-of-NYC change.")

@@ -7,7 +7,7 @@ Output: data/processed/q6_subway_monthly.csv
 """
 import pandas as pd
 
-from common import NY, columns, join_nta, label_area, log_gaps, pick, save, soql, to_num, write_sample
+from m2_common import NY, columns, join_nta, label_area, log_gaps, pick, save, soql, to_num, write_sample
 
 PARTS = [("wujg-7c2s", "2024-01-01T00:00:00", "2025-01-01T00:00:00"),
          ("5wq4-mkjj", "2025-01-01T00:00:00", "2030-01-01T00:00:00")]

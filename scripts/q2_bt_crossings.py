@@ -7,7 +7,7 @@ Output: data/processed/q2_bt_yoy.csv
 """
 import pandas as pd
 
-from common import NY, RAW, columns, pick, save, soql, to_num, write_sample
+from m2_common import NY, RAW, columns, pick, save, soql, to_num, write_sample
 
 DS = "ebfx-2m7v"
 

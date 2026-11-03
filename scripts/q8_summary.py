@@ -7,12 +7,12 @@ Output: data/processed/q8_nta_summary.csv
 """
 import pandas as pd
 
-from common import PROC, save, write_sample
+from m2_common import PROC, save, write_sample
 
 crash = pd.read_csv(PROC / "q5_nta_crash_change.csv")
 bike = pd.read_csv(PROC / "q6_citibike_origins.csv")
 subway = pd.read_csv(PROC / "q6_subway_monthly.csv")
-speeds = pd.read_csv(PROC / "q4_speeds_monthly.csv")
+speeds = pd.read_csv(PROC / "m2_q4_speeds_monthly.csv")
 
 # subway: total 2025 entries vs same months of 2024, per NTA
 s = subway[subway["year_month"].str.startswith("2025") & subway["entries_same_month_2024"].notna()]

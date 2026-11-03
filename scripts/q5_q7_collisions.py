@@ -7,7 +7,7 @@ Outputs
 """
 import pandas as pd
 
-from common import NYC, PROC, join_nta, label_area, log_gaps, save, soql, to_num, valid_nyc_coords, write_sample
+from m2_common import NYC, PROC, join_nta, label_area, log_gaps, save, soql, to_num, valid_nyc_coords, write_sample
 
 DS = "h9gi-nx95"
 START = "2023-01-01T00:00:00"
