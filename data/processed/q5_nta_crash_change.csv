@@ -1,0 +1,31 @@
+nta_name,borough,area,crashes_2024,crashes_2025,crash_change_pct,injured_2024,injured_2025
+Stuyvesant Town-Peter Cooper Village,Manhattan,inside,75,95,26.66666666666666,41,57
+Central Park,Manhattan,adjacent,92,116,26.086956521739136,48,73
+The Battery-Governors Island-Ellis Island-Liberty Island,Manhattan,inside,8,10,25.0,3,4
+Brooklyn Heights,Brooklyn,adjacent,227,281,23.788546255506617,98,86
+East Village,Manhattan,inside,361,437,21.052631578947366,216,250
+Greenwich Village,Manhattan,inside,221,256,15.837104072398201,106,148
+Brooklyn Navy Yard,Brooklyn,adjacent,40,46,14.999999999999991,22,19
+Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn,adjacent,743,829,11.574697173620452,347,332
+Midtown-Times Square,Manhattan,inside,938,1023,9.06183368869935,486,546
+Long Island City-Hunters Point,Queens,adjacent,335,354,5.671641791044779,162,156
+Upper East Side-Carnegie Hill,Manhattan,adjacent,381,392,2.8871391076115582,165,182
+West Village,Manhattan,inside,287,294,2.4390243902439046,107,140
+Williamsburg,Brooklyn,adjacent,590,591,0.16949152542373724,271,270
+SoHo-Little Italy-Hudson Square,Manhattan,inside,458,456,-0.4366812227074246,181,203
+Chinatown-Two Bridges,Manhattan,inside,305,303,-0.6557377049180357,153,138
+Upper East Side-Lenox Hill-Roosevelt Island,Manhattan,adjacent,488,483,-1.0245901639344246,261,233
+United Nations,Manhattan,inside,26,25,-3.8461538461538436,17,15
+East Midtown-Turtle Bay,Manhattan,inside,419,402,-4.057279236276845,264,220
+Murray Hill-Kips Bay,Manhattan,inside,559,531,-5.008944543828264,314,315
+Hell's Kitchen,Manhattan,inside,628,588,-6.369426751592355,306,261
+Midtown South-Flatiron-Union Square,Manhattan,inside,434,403,-7.14285714285714,253,233
+Financial District-Battery Park City,Manhattan,inside,408,368,-9.80392156862745,160,132
+Chelsea-Hudson Yards,Manhattan,inside,846,756,-10.63829787234043,353,303
+Greenpoint,Brooklyn,adjacent,475,416,-12.421052631578943,175,163
+South Williamsburg,Brooklyn,adjacent,515,448,-13.009708737864079,317,271
+Gramercy,Manhattan,inside,250,210,-16.000000000000004,139,107
+Tribeca-Civic Center,Manhattan,inside,419,350,-16.46778042959427,153,144
+Upper West Side-Lincoln Square,Manhattan,adjacent,306,254,-16.993464052287578,194,126
+Lower East Side,Manhattan,inside,533,431,-19.13696060037523,280,219
+Queensbridge-Ravenswood-Dutch Kills,Queens,adjacent,413,325,-21.307506053268767,258,177

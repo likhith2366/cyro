@@ -1,4 +1,6 @@
 data/raw/
+*.zip
+data/processed/collisions_labeled.csv
+.venv/
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
+.DS_Store

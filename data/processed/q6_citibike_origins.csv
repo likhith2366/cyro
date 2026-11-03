@@ -1,0 +1,123 @@
+origin_nta,origin_borough,origin_area,trips_into_zone_202410,trips_into_zone_202510,pct_change,added_trips
+Murray Hill-Kips Bay,Manhattan,inside,127771.0,130967.0,2.501350071612496,3196.0
+Manhattanville-West Harlem,Manhattan,elsewhere,1141.0,1275.0,11.744084136722165,134.0
+Astoria Park,Queens,elsewhere,79.0,155.0,96.20253164556962,76.0
+Sunnyside Yards (South),Queens,elsewhere,107.0,150.0,40.18691588785046,43.0
+Kensington,Brooklyn,elsewhere,130.0,161.0,23.84615384615385,31.0
+East Flatbush-Rugby,Brooklyn,elsewhere,39.0,57.0,46.153846153846146,18.0
+Washington Heights (North),Manhattan,elsewhere,543.0,560.0,3.130755064456725,17.0
+Randall's Island,Manhattan,elsewhere,307.0,320.0,4.234527687296419,13.0
+Calvary & Mount Zion Cemeteries,Queens,elsewhere,2.0,15.0,650.0,13.0
+Bay Ridge,Brooklyn,elsewhere,53.0,65.0,22.64150943396226,12.0
+Belmont,Bronx,elsewhere,22.0,31.0,40.90909090909092,9.0
+Maspeth,Queens,elsewhere,233.0,241.0,3.433476394849788,8.0
+Brownsville,Brooklyn,elsewhere,1.0,4.0,300.0,3.0
+Claremont Park,Bronx,elsewhere,7.0,9.0,28.57142857142858,2.0
+Sunset Park (East)-Borough Park (West),Brooklyn,elsewhere,0.0,2.0,inf,2.0
+Inwood Hill Park,Manhattan,elsewhere,38.0,40.0,5.263157894736836,2.0
+Bronx Park,Bronx,elsewhere,2.0,2.0,0.0,0.0
+Crotona Park,Bronx,elsewhere,1.0,1.0,0.0,0.0
+Van Cortlandt Park,Bronx,elsewhere,1.0,0.0,-100.0,-1.0
+Kingsbridge Heights-Van Cortlandt Village,Bronx,elsewhere,9.0,6.0,-33.333333333333336,-3.0
+Norwood,Bronx,elsewhere,4.0,1.0,-75.0,-3.0
+Holy Cross Cemetery,Brooklyn,elsewhere,5.0,1.0,-80.0,-4.0
+Claremont Village-Claremont (East),Bronx,elsewhere,53.0,49.0,-7.547169811320753,-4.0
+Tremont,Bronx,elsewhere,22.0,18.0,-18.181818181818176,-4.0
+Green-Wood Cemetery,Brooklyn,elsewhere,99.0,93.0,-6.060606060606055,-6.0
+Borough Park,Brooklyn,elsewhere,27.0,20.0,-25.92592592592593,-7.0
+Sunnyside Yards (North),Queens,elsewhere,59.0,52.0,-11.864406779661019,-7.0
+Hunts Point,Bronx,elsewhere,23.0,15.0,-34.78260869565217,-8.0
+Bedford Park,Bronx,elsewhere,20.0,12.0,-40.0,-8.0
+Inwood,Manhattan,elsewhere,80.0,72.0,-9.999999999999998,-8.0
+University Heights (North)-Fordham,Bronx,elsewhere,27.0,17.0,-37.03703703703704,-10.0
+East Flatbush-Farragut,Brooklyn,elsewhere,21.0,11.0,-47.61904761904761,-10.0
+Mount Hope,Bronx,elsewhere,20.0,9.0,-55.00000000000001,-11.0
+Crotona Park East,Bronx,elsewhere,61.0,50.0,-18.032786885245898,-11.0
+Kingsbridge-Marble Hill,Bronx,elsewhere,60.0,48.0,-19.999999999999996,-12.0
+Brooklyn Navy Yard,Brooklyn,adjacent,1904.0,1892.0,-0.6302521008403339,-12.0
+Fordham Heights,Bronx,elsewhere,28.0,16.0,-42.85714285714286,-12.0
+Mount Olivet & All Faiths Cemeteries,Queens,elsewhere,17.0,4.0,-76.47058823529412,-13.0
+Lincoln Terrace Park,Brooklyn,elsewhere,67.0,52.0,-22.388059701492537,-15.0
+North Corona,Queens,elsewhere,33.0,17.0,-48.484848484848484,-16.0
+West Farms,Bronx,elsewhere,31.0,14.0,-54.83870967741935,-17.0
+Glendale,Queens,elsewhere,50.0,27.0,-46.0,-23.0
+Longwood,Bronx,elsewhere,109.0,86.0,-21.100917431192656,-23.0
+Highbridge Park,Manhattan,elsewhere,57.0,33.0,-42.10526315789473,-24.0
+Mount Eden-Claremont (West),Bronx,elsewhere,61.0,37.0,-39.34426229508197,-24.0
+The Battery-Governors Island-Ellis Island-Liberty Island,Manhattan,adjacent,57.0,25.0,-56.14035087719298,-32.0
+East Elmhurst,Queens,elsewhere,137.0,105.0,-23.357664233576646,-32.0
+Elmhurst,Queens,elsewhere,267.0,233.0,-12.734082397003743,-34.0
+Flushing Meadows-Corona Park,Queens,elsewhere,50.0,16.0,-68.0,-34.0
+Corona,Queens,elsewhere,93.0,55.0,-40.86021505376344,-38.0
+Morrisania,Bronx,elsewhere,96.0,57.0,-40.625,-39.0
+Highbridge,Bronx,elsewhere,112.0,70.0,-37.5,-42.0
+Ocean Hill,Brooklyn,elsewhere,259.0,203.0,-21.62162162162162,-56.0
+Sunset Park (Central),Brooklyn,elsewhere,206.0,149.0,-27.669902912621357,-57.0
+University Heights (South)-Morris Heights,Bronx,elsewhere,87.0,29.0,-66.66666666666667,-58.0
+Yankee Stadium-Macombs Dam Park,Bronx,elsewhere,95.0,36.0,-62.10526315789473,-59.0
+Mott Haven-Port Morris,Bronx,elsewhere,476.0,413.0,-13.235294117647056,-63.0
+Old Astoria-Hallets Point,Queens,elsewhere,748.0,680.0,-9.090909090909093,-68.0
+East Flatbush-Erasmus,Brooklyn,elsewhere,195.0,122.0,-37.43589743589744,-73.0
+Ridgewood,Queens,elsewhere,1284.0,1210.0,-5.763239875389403,-74.0
+Melrose,Bronx,elsewhere,187.0,113.0,-39.57219251336899,-74.0
+Flatbush (West)-Ditmas Park-Parkville,Brooklyn,elsewhere,256.0,169.0,-33.984375,-87.0
+Long Island City-Hunters Point,Queens,adjacent,2577.0,2487.0,-3.4924330616996513,-90.0
+Crown Heights (South),Brooklyn,elsewhere,468.0,378.0,-19.23076923076923,-90.0
+South Williamsburg,Brooklyn,adjacent,1252.0,1155.0,-7.747603833865813,-97.0
+Astoria (North)-Ditmars-Steinway,Queens,elsewhere,1160.0,1063.0,-8.362068965517244,-97.0
+Hamilton Heights-Sugar Hill,Manhattan,elsewhere,1008.0,903.0,-10.416666666666663,-105.0
+Upper East Side-Lenox Hill-Roosevelt Island,Manhattan,adjacent,30248.0,30141.0,-0.35374239619148096,-107.0
+Concourse-Concourse Village,Bronx,elsewhere,361.0,239.0,-33.795013850415515,-122.0
+Prospect Lefferts Gardens-Wingate,Brooklyn,elsewhere,576.0,437.0,-24.131944444444443,-139.0
+Prospect Park,Brooklyn,elsewhere,706.0,564.0,-20.113314447592067,-142.0
+Clinton Hill,Brooklyn,elsewhere,2962.0,2817.0,-4.895340985820395,-145.0
+Windsor Terrace-South Slope,Brooklyn,elsewhere,469.0,323.0,-31.130063965884858,-146.0
+Washington Heights (South),Manhattan,elsewhere,740.0,589.0,-20.405405405405407,-151.0
+Woodside,Queens,elsewhere,673.0,502.0,-25.40861812778603,-171.0
+Jackson Heights,Queens,elsewhere,720.0,548.0,-23.888888888888893,-172.0
+Sunset Park (West),Brooklyn,elsewhere,746.0,564.0,-24.39678284182306,-182.0
+Sunnyside,Queens,elsewhere,2123.0,1938.0,-8.714083843617527,-185.0
+Flatbush,Brooklyn,elsewhere,382.0,184.0,-51.83246073298429,-198.0
+Astoria (Central),Queens,elsewhere,2381.0,2111.0,-11.339773204535907,-270.0
+Bushwick (East),Brooklyn,elsewhere,1432.0,1123.0,-21.578212290502798,-309.0
+Harlem (North),Manhattan,elsewhere,1539.0,1221.0,-20.66276803118908,-318.0
+Astoria (East)-Woodside (North),Queens,elsewhere,1387.0,1069.0,-22.927180966113912,-318.0
+East Williamsburg,Brooklyn,elsewhere,8579.0,8224.0,-4.138011423242805,-355.0
+Bedford-Stuyvesant (West),Brooklyn,elsewhere,4682.0,4321.0,-7.710380179410503,-361.0
+Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn,elsewhere,8128.0,7765.0,-4.4660433070866095,-363.0
+Prospect Heights,Brooklyn,elsewhere,2334.0,1962.0,-15.938303341902316,-372.0
+Crown Heights (North),Brooklyn,elsewhere,2273.0,1893.0,-16.71799384073911,-380.0
+Greenwich Village,Manhattan,inside,147112.0,146725.0,-0.26306487574093707,-387.0
+Queensbridge-Ravenswood-Dutch Kills,Queens,adjacent,3620.0,3201.0,-11.574585635359114,-419.0
+East Harlem (North),Manhattan,elsewhere,2644.0,2218.0,-16.111951588502272,-426.0
+Bedford-Stuyvesant (East),Brooklyn,elsewhere,3012.0,2572.0,-14.608233731739706,-440.0
+Harlem (South),Manhattan,elsewhere,4155.0,3677.0,-11.504211793020458,-478.0
+Bushwick (West),Brooklyn,elsewhere,3525.0,2952.0,-16.255319148936167,-573.0
+Fort Greene,Brooklyn,elsewhere,7376.0,6780.0,-8.080260303687636,-596.0
+East Harlem (South),Manhattan,elsewhere,5067.0,4379.0,-13.578054075389778,-688.0
+Greenpoint,Brooklyn,adjacent,10541.0,9835.0,-6.697656768807514,-706.0
+Brooklyn Heights,Brooklyn,adjacent,7698.0,6906.0,-10.288386593920496,-792.0
+Park Slope,Brooklyn,elsewhere,4079.0,3278.0,-19.637165972051974,-801.0
+Williamsburg,Brooklyn,adjacent,35575.0,34745.0,-2.333099086437107,-830.0
+Midtown South-Flatiron-Union Square,Manhattan,inside,169704.0,168804.0,-0.5303351718285998,-900.0
+Morningside Heights,Manhattan,elsewhere,4301.0,3292.0,-23.459660544059524,-1009.0
+Upper East Side-Carnegie Hill,Manhattan,adjacent,22737.0,21254.0,-6.522408409200864,-1483.0
+Upper West Side-Manhattan Valley,Manhattan,elsewhere,9140.0,7239.0,-20.79868708971554,-1901.0
+Lower East Side,Manhattan,inside,94776.0,92381.0,-2.527011057651729,-2395.0
+Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn,adjacent,20225.0,17781.0,-12.084054388133502,-2444.0
+Upper East Side-Yorkville,Manhattan,adjacent,14302.0,11023.0,-22.926863375751637,-3279.0
+Upper West Side-Lincoln Square,Manhattan,adjacent,52789.0,49093.0,-7.001458637216085,-3696.0
+Gramercy,Manhattan,inside,60593.0,56834.0,-6.203686894525773,-3759.0
+Stuyvesant Town-Peter Cooper Village,Manhattan,inside,37889.0,33957.0,-10.377682176885116,-3932.0
+Upper West Side (Central),Manhattan,adjacent,31768.0,27455.0,-13.576555023923442,-4313.0
+Chinatown-Two Bridges,Manhattan,inside,63600.0,58952.0,-7.308176100628927,-4648.0
+SoHo-Little Italy-Hudson Square,Manhattan,inside,116171.0,110495.0,-4.8859009563488325,-5676.0
+Central Park,Manhattan,adjacent,35360.0,26092.0,-26.210407239819,-9268.0
+Hell's Kitchen,Manhattan,inside,119170.0,109594.0,-8.035579424351768,-9576.0
+East Village,Manhattan,inside,223887.0,213594.0,-4.597408514116497,-10293.0
+Tribeca-Civic Center,Manhattan,inside,86520.0,75927.0,-12.243411927877945,-10593.0
+East Midtown-Turtle Bay,Manhattan,inside,74877.0,63027.0,-15.825954565487399,-11850.0
+Financial District-Battery Park City,Manhattan,inside,129887.0,117054.0,-9.880126571558357,-12833.0
+West Village,Manhattan,inside,143733.0,130721.0,-9.05289669039121,-13012.0
+Chelsea-Hudson Yards,Manhattan,inside,301836.0,282460.0,-6.419380060695213,-19376.0
+Midtown-Times Square,Manhattan,inside,193089.0,161076.0,-16.579401208769017,-32013.0
