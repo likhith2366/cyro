@@ -24,7 +24,7 @@ same domain questions from the same public datasets; they differ in some definit
 | Pre-toll baseline for Q2 | MTA Vehicle Miles Traveled in the CBD | MTA Bridges & Tunnels crossings (Hugh L. Carey, Queens Midtown, Manhattan-bound) |
 | Citi Bike months | Feb 2024 vs Feb 2025 | Oct 2024 vs Oct 2025 |
 
-**Milestone 2 report:** in `report/`.
+**Milestone 2 report (submitted):** [`report/Team_cyro_Milestone2.pdf`](report/Team_cyro_Milestone2.pdf). An earlier draft built by Pipeline A is in `report/Milestone2_Report.pdf`.
 
 ## Domain questions
 
