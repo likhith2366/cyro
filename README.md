@@ -10,6 +10,28 @@ On January 5, 2025 New York began tolling vehicles entering Manhattan at or belo
 Congestion Relief Zone, CRZ). This project uses public data to look at how traffic, speeds, safety and
 transit use changed, and where.
 
+## Milestones
+
+| Milestone | Where to find it |
+|---|---|
+| **Milestone 3 – D3 visualizations (current)** | **Interactive page: [`milestone3/index.html`](milestone3/index.html)** · write-up with screenshots: [`milestone3/README.md`](milestone3/README.md) |
+| Milestone 2 – Data handling & sketches (submitted, unchanged) | [`report/Team_cyro_Milestone2.pdf`](report/Team_cyro_Milestone2.pdf), sketches in `sketches/`, pipelines described below |
+| Milestone 1 – Proposal | Submitted on Brightspace (topic, datasets and questions are repeated below) |
+
+### Milestone 3: how to view the D3 visualizations
+
+```bash
+git clone https://github.com/likhith2366/cyro.git
+cd cyro                      # serve from the repository root
+python -m http.server 8000   # any static server works
+```
+
+Open **http://localhost:8000/milestone3/**. The page has one section per domain question (Q1–Q8), each with the D3
+visualization, a description of what it shows, and a "Show the D3 code" panel. D3 v7 is bundled in `milestone3/vendor/`, so
+nothing needs to be installed. (Opening `index.html` directly from disk does not work because browsers block `fetch` on
+`file://` URLs.) The visualizations read the Milestone 2 tables in `data/processed/` directly; the only new data files are the
+map boundaries in `milestone3/data/`, built by `python scripts/m3_build_geo.py`.
+
 ## What is in this repository
 
 The repository holds two data pipelines that the team built in parallel for Milestone 2. Both answer the
@@ -113,6 +135,26 @@ VMT to 2026-06, subway ridership to 2026-09, crashes to 2026-10-27.
 We do not use Observable notebooks at this stage. If we add any, their URLs will be listed here.
 
 ## AI use
+
+### Milestone 3
+
+Per the course AI policy, this is how AI was used for Milestone 3 (the same statement is at the end of
+[`milestone3/index.html`](milestone3/index.html) and [`milestone3/README.md`](milestone3/README.md)):
+
+- **Model:** Claude (Anthropic), Claude Opus 5.5, used through the Claude app.
+- **Coding:** Claude wrote the first drafts of all D3 code in `milestone3/js/` (the eight charts and the shared helpers in
+  `common.js`), the page layout and CSS (`milestone3/index.html`, `milestone3/css/style.css`), and `scripts/m3_build_geo.py`,
+  which converts the 2020 NTA boundaries to GeoJSON. The team specified the chart type, encodings and interactions for each
+  question (from our Milestone 2 sketches), ran the page, checked tooltip numbers against the CSVs, and asked for fixes where a
+  chart was wrong or unclear.
+- **Writing:** Claude drafted the "What the visualization shows" paragraphs from summary numbers computed from our processed
+  tables, the Milestone 3 introduction and this README section. The team reviewed every number and edited the wording.
+- **Not AI:** the choice of questions, datasets and processing rules (Milestones 1–2), the hand-drawn sketches, and the
+  interpretation decisions (e.g., presenting results as associations, not causal effects).
+- **Split of work:** most of the first-draft code and text for Milestone 3 came from Claude; the team's work was the design
+  decisions, the data preparation behind every chart (Milestone 2 pipelines), testing and verification, and editing.
+
+### Milestone 2 and earlier
 
 Per the course AI policy: we used **Claude (Anthropic)** as an assistant for:
 

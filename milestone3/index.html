@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team cyro – Milestone 3: D3 Visualizations</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <nav aria-label="Sections">
+    <span class="brand">cyro · M3</span>
+    <a href="#intro">Intro</a>
+    <a href="#q1">Q1</a><a href="#q2">Q2</a><a href="#q3">Q3</a><a href="#q4">Q4</a>
+    <a href="#q5">Q5</a><a href="#q6">Q6</a><a href="#q7">Q7</a><a href="#q8">Q8</a>
+    <a href="#limits">Limits</a><a href="#ai">AI use</a>
+  </nav>
+</header>
+
+<main>
+<h1>Congestion Pricing in New York City: What Changed After the Toll?</h1>
+<p class="lede">Milestone 3: first D3 versions of all eight visualizations</p>
+<p class="meta">
+  CS-GY 6313 B Information Visualization, Fall 2026 ·
+  <b>Team cyro (Team 3):</b> Praneeth Yashovardhan Kadem (pk3206), Bhavana Peruri (bp2847), Likhith Vardhan Goruputi (lvg8030) ·
+  Repository: <a href="https://github.com/likhith2366/cyro">github.com/likhith2366/cyro</a>
+</p>
+
+<section id="intro">
+  <h3>Introduction</h3>
+  <p>On January 5, 2025 New York started charging most vehicles a toll to enter Manhattan at or below 60th Street, the
+  <b>Congestion Relief Zone</b>. The peak toll for a car is $9 (5 a.m.–9 p.m. on weekdays, 9 a.m.–9 p.m. on weekends) and
+  lower overnight. Some roads inside the zone, mainly the FDR Drive and the West Side Highway, are not tolled.</p>
+  <p>Our project uses public MTA, NYPD, Citi Bike and NYC Planning data to let a reader look at the evidence directly:
+  how many vehicles still enter the zone and when (Q1–Q3), whether traffic got faster and safer (Q4, Q5, Q7), where trips
+  moved to (Q6), and which neighborhoods gained or paid (Q8). Because 2025 also brought return-to-office changes, weather and
+  construction, we always compare the zone with the area just outside it and with the rest of the city, and we describe
+  differences as associations, not proof that the toll caused them.</p>
+  <p class="data-note">Every chart below is built with D3 v7 directly from the processed tables in
+  <code>data/processed/</code> that we produced and documented in Milestone 2. Hover any mark for exact numbers. Each section
+  ends with a <b>“Show the D3 code”</b> panel that loads that chart's source file. How to run this page locally is in
+  <code>milestone3/README.md</code>.</p>
+  <h3>What changed since Milestone 2</h3>
+  <ul>
+    <li><b>Q1:</b> the sketch's weekday/weekend toggle became a tolled / excluded-roadway toggle, because our processed table
+      only covers weekdays; the 10-minute hover profile became an hourly profile panel (click a row).</li>
+    <li><b>Q4:</b> the speeds dataset has no peak/off-peak split, so the toggle now switches between mph and an index against the
+      2022–2024 average for the same month.</li>
+    <li><b>Q6:</b> the “from which neighborhoods” part now uses the MTA subway origin–destination estimates (Oct 2024 vs. Oct
+      2025), which we listed as a possible extension, so subway and Citi Bike are both trips <i>into</i> the zone in the same month.
+      Citi Bike is shown for Oct 2024 vs. Oct 2025 (Pipeline B).</li>
+    <li><b>Q7:</b> the slope chart shows Jan–Sep totals for 2023–2026 indexed to 2024 instead of raw counts, since the rest of
+      the city has ten times more crashes than the zone.</li>
+    <li>Maps use the 2020 NTA boundaries (NYC Planning) and the same hand-digitized zone outline used in Milestone 2
+      (<code>scripts/m3_build_geo.py</code>).</li>
+  </ul>
+</section>
+
+<!-- ============================== Q1 ============================== -->
+<section class="q" id="q1">
+  <div class="qnum">Question 1</div>
+  <div class="question">When and where do vehicles enter the zone on a typical weekday, and which entry points are the busiest?</div>
+  <div class="viz" id="q1-viz"></div>
+  <p class="viz-caption">Data: MTA Congestion Relief Zone Vehicle Entries, average over 452 non-holiday weekdays, Jan 5, 2025 – Oct 2026
+    (<code>q1_weekday_profile.csv</code>).</p>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>The heatmap has one row per entry point (sorted by daily volume) and one column per hour; darker cells mean more vehicles.
+    The bars on the right give each entry point's daily total, and the line chart below shows the hourly profile of the selected
+    row against the average of all twelve.</p>
+    <p>On an average weekday about <b>496,000 tolled entries</b> are recorded. <b>East 60th St</b> is by far the busiest
+    (about 76,000 a day, 15% of the total), followed by the FDR Drive, the West Side Highway, the Queens Midtown Tunnel and the
+    Lincoln Tunnel (43–52,000 each). Traffic is lowest around <b>2 a.m.</b> (about 5,600 entries per hour across all points)
+    and highest at <b>8 a.m.</b> (about 31,000). The tunnels from New Jersey and Brooklyn have a sharp morning peak, while
+    East 60th St stays high from late morning into the evening.</p>
+    <p>Switching to <b>excluded-roadway entries</b> shows that untolled traffic is concentrated at only four points: the FDR Drive
+    (≈29,500 a day), the Brooklyn Bridge (≈20,000), the Hugh L. Carey Tunnel (≈10,200) and the West Side Highway (≈5,300).
+    These are vehicles that stay on the FDR or West Side Highway and never enter the tolled street grid, which leads into Q3.</p>
+  </div>
+  <details class="code" data-src="js/q1.js"><summary>Show the D3 code (js/q1.js)</summary><pre><code></code></pre></details>
+</section>
+
+<!-- ============================== Q2 ============================== -->
+<section class="q" id="q2">
+  <div class="qnum">Question 2</div>
+  <div class="question">How has the number of entries changed since the toll started, and is the change different by vehicle class or for peak vs. overnight?</div>
+  <h3>Since the toll: weekly entries by vehicle class</h3>
+  <div class="viz" id="q2-viz"></div>
+  <p class="viz-caption">Data: MTA CRZ Vehicle Entries, weekly sums by vehicle class and toll period, Jan 2025 – Oct 2026
+    (<code>q2_weekly_by_class.csv</code>). Each panel has its own y-axis because volumes differ by 100×.</p>
+  <h3>Before vs. after: Manhattan-bound tunnel crossings, 2025 vs. 2024</h3>
+  <div class="viz" id="q2-viz-bt"></div>
+  <p class="viz-caption">Data: MTA Bridges and Tunnels Hourly Crossings, all vehicle classes, each 2025 month vs. the same month of 2024
+    (<code>q2_bt_yoy.csv</code>).</p>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>The small multiples show weekly entries for each vehicle class, split into the <b>peak</b> period (blue) and
+    <b>overnight</b> (orange). Dragging across the grey strip at the bottom zooms all six panels to the same date range, and the
+    “% change” button compares each 2026 week with the same week of 2025.</p>
+    <p>Cars, pickups and vans make up 56% of all entries and taxis/for-hire vehicles 38%; both show dips around holidays.
+    Comparing Jan–Sep 2026 with the same weeks of 2025, car entries were <b>8% lower at peak</b> and 7% lower overnight, while
+    <b>taxis and for-hire vehicles stayed flat</b> (+0.1% peak, +5% overnight). Multi-unit trucks (−25%) and motorcycles (−33%) fell
+    the most; single-unit trucks dropped at peak (−7%) but rose overnight (+7%), which is consistent with some deliveries moving to the
+    cheaper overnight toll. So the decline continued into the toll's second year, mostly for private vehicles and trucks.</p>
+    <p>The grey band marks the last two weeks of data (Oct 4–17, 2026), where every class suddenly shifts from peak to overnight.
+    We have not yet checked whether this is a change in how the source labels time periods, so those weeks are left out of the
+    percentages above.</p>
+    <p>Because zone entries only start on toll day, the second chart provides the before/after view. Manhattan-bound crossings
+    at the <b>Hugh L. Carey Tunnel were 3.4% lower in 2025</b> than in 2024 and at the <b>Queens Midtown Tunnel 0.9% lower</b>.
+    The drop was largest in the first months (−7% in February at both tunnels) and smaller later in the year, so the change is
+    real but modest at these two facilities.</p>
+  </div>
+  <details class="code" data-src="js/q2.js"><summary>Show the D3 code (js/q2.js)</summary><pre><code></code></pre></details>
+</section>
+
+<!-- ============================== Q3 ============================== -->
+<section class="q" id="q3">
+  <div class="qnum">Question 3</div>
+  <div class="question">Are drivers avoiding the toll by using the FDR Drive and the West Side Highway instead?</div>
+  <div class="viz" id="q3-viz"></div>
+  <p class="viz-caption">Data: MTA CRZ Vehicle Entries, tolled vs. excluded-roadway entries (<code>q1_weekday_profile.csv</code>,
+    <code>q3_excluded_share.csv</code>). Entry-point locations are approximate.</p>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>Each circle on the map is an entry point; its size is the weekday volume and the orange slice is the share of vehicles that
+    entered on an <b>excluded roadway</b> (they stay on the FDR Drive or West Side Highway and do not pay). Clicking a circle filters
+    the line chart to that entry point; the dashed line marks its January 2025 level.</p>
+    <p>About <b>11.5% of all entries</b> are on excluded roadways. If drivers were increasingly detouring around the toll, this share
+    would climb over time. It does not: it moves between about 11% and 12.4% with a seasonal bump each August, and in October 2026 it
+    was 11.4%, almost the same as in January 2025. The excluded share is high at the Brooklyn Bridge (about 42%) and the FDR Drive
+    (about 36%), but those shares are also stable.</p>
+    <p><b>Limitation:</b> excluded-roadway counts start on toll day, so this view can show whether avoidance grew <i>after</i> the toll,
+    but not how many drivers switched to the FDR or West Side Highway on day one compared with 2024.</p>
+  </div>
+  <details class="code" data-src="js/q3.js"><summary>Show the D3 code (js/q3.js)</summary><pre><code></code></pre></details>
+</section>
+
+<!-- ============================== Q4 ============================== -->
+<section class="q" id="q4">
+  <div class="qnum">Question 4</div>
+  <div class="question">Has traffic inside the zone become faster compared with 2019–2024, and compared with the rest of the city?</div>
+  <div class="viz" id="q4-viz"></div>
+  <p class="viz-caption">Data: MTA CBD Taxi and FHV Speeds, monthly, Oct 2019 – Aug 2025 (<code>m2_q4_speeds_monthly.csv</code>).
+    Speeds are computed from taxi and for-hire-vehicle trips, not all traffic.</p>
+  <h3>Difference-in-differences: change vs. 2024 minus the rest-of-city change</h3>
+  <div class="viz" id="q4-viz-did"></div>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>The top chart shows average taxi/FHV speeds inside the zone (blue), just outside it (orange) and in the rest of the city (aqua)
+    since 2019. The grey band is the spring 2020 lockdown, when streets were empty, and the black line is the start of tolling.
+    The index view divides each month by the 2022–2024 average for the same calendar month, which removes seasonality.</p>
+    <p>Inside-zone speeds fell steadily from about 12 mph in 2020 to <b>8.7 mph in 2024</b>. In 2025 that trend reversed:
+    Jan–Aug 2025 averaged <b>9.0 mph (+0.27 mph, +3%)</b>, while the adjacent area (−0.14 mph) and the rest of NYC (−0.14 mph)
+    got slightly slower. The bars below make the comparison explicit: inside the zone, the change from 2024 was 0.2–0.65 mph better
+    than the rest of the city in <b>every month</b> of 2025, while the adjacent area hovers around zero. This is consistent with a
+    real but modest speed-up in the tolled area that did not spill over to its neighbors.</p>
+  </div>
+  <details class="code" data-src="js/q4.js"><summary>Show the D3 code (js/q4.js)</summary><pre><code></code></pre></details>
+</section>
+
+<!-- ============================== Q5 ============================== -->
+<section class="q" id="q5">
+  <div class="qnum">Question 5</div>
+  <div class="question">Did traffic or crashes get worse in neighborhoods just outside the zone?</div>
+  <div class="viz" id="q5-viz"></div>
+  <p class="viz-caption">Data: NYPD Motor Vehicle Collisions, 2025 vs. the same calendar months of 2024, per 2020 NTA
+    (<code>q5_nta_crash_change.csv</code>); speeds from Q4. Hatched Manhattan neighborhoods are outside the 2 km ring.</p>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>The map colors each neighborhood inside the zone or within 2 km of it by the change in crashes (or injuries); red means more,
+    blue means fewer. The ranked bars on the right list the same neighborhoods, with a dot marking whether each is inside the zone
+    or adjacent. Hovering a bar highlights it on the map and vice versa.</p>
+    <p>There is no general worsening just outside the zone. Summed over the 12 adjacent neighborhoods, crashes went from 4,605 to
+    4,535 (<b>−1.5%</b>) and injuries from 2,318 to 2,088 (<b>−10%</b>). It is uneven, though: 7 of the 12 adjacent neighborhoods
+    had more crashes, led by <b>Central Park (+26%)</b>, <b>Brooklyn Heights (+24%)</b> and the Brooklyn Navy Yard (+15%), while
+    Queensbridge–Ravenswood (−21%) and Greenpoint (−12%) improved. Traffic speed in the adjacent area changed little (−0.14 mph,
+    shown in the callout), so there is no sign of a large traffic spillover either.</p>
+  </div>
+  <details class="code" data-src="js/q5.js"><summary>Show the D3 code (js/q5.js)</summary><pre><code></code></pre></details>
+</section>
+
+<!-- ============================== Q6 ============================== -->
+<section class="q" id="q6">
+  <div class="qnum">Question 6</div>
+  <div class="question">Did more people take the subway or Citi Bike into the zone, and from which neighborhoods?</div>
+  <div class="viz" id="q6-viz"></div>
+  <p class="viz-caption">Data: MTA Subway Origin-Destination Ridership Estimates (Oct 2024, Oct 2025;
+    <code>q6_subway_od_into_crz_by_neighborhood.csv</code>) and Citi Bike trip data (Oct 2024, Oct 2025; <code>q6_citibike_origins.csv</code>).</p>
+  <h3>Subway fare entries by station area, each month vs. the same month of 2024</h3>
+  <div class="viz" id="q6-viz-trend"></div>
+  <p class="viz-caption">Data: MTA Subway Hourly Ridership (<code>q6_subway_by_area.csv</code>). Entries count where riders start, not where they go.</p>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>The map colors each origin neighborhood by the change in trips <b>into the zone</b> between October 2024 and October 2025
+    (blue = more, red = fewer; hatched = too few trips to color reliably). The buttons switch between the subway and Citi Bike, the bar
+    chart lists the biggest gains and losses, and clicking a neighborhood or bar draws its flow line into the zone.</p>
+    <p><b>Subway:</b> estimated weekday subway riders traveling into the zone rose from about 985,000 to 1,018,000
+    (<b>+3.4%</b>). The largest gains came from Canarsie (+2,900 a day), Long Island City–Hunters Point (+2,600), Downtown Brooklyn and
+    the Upper East Side (about +2,400 each); the largest losses were from the Bronx and Queens (Concourse −1,400, Flushing Meadows–Corona −900).
+    Neighborhoods inside the zone are destinations here, so they are left grey. The line chart below shows that subway entries
+    grew everywhere in 2025 (+7–8% vs. 2024 in every area) and by about +12% in 2026, so subway growth is citywide, not specific to the zone.</p>
+    <p><b>Citi Bike:</b> trips ending in the zone fell from 2.46 M to 2.28 M (<b>−7%</b>), and trips coming from outside the zone fell more
+    (−11%). Only 15 of the 106 origin neighborhoods outside the zone grew, and those gains are tiny (at most about +130 trips a month). The biggest losses
+    are from the neighborhoods right next to the zone: Central Park (−9,300 trips), the Upper West Side and the Upper East Side. We did not find evidence of a shift toward cycling into the zone; month-specific
+    factors such as weather and pricing may matter more than the toll.</p>
+  </div>
+  <details class="code" data-src="js/q6.js"><summary>Show the D3 code (js/q6.js)</summary><pre><code></code></pre></details>
+</section>
+
+<!-- ============================== Q7 ============================== -->
+<section class="q" id="q7">
+  <div class="qnum">Question 7</div>
+  <div class="question">Have crashes and injuries inside the zone gone down compared with the rest of the city?</div>
+  <div class="viz" id="q7-viz"></div>
+  <p class="viz-caption">Data: NYPD Motor Vehicle Collisions, monthly by area, Jan 2023 – Sep 2026 (<code>q7_monthly_by_area.csv</code>).
+    Left: each month divided by the same month of 2024. Right: Jan–Sep totals, 2024 = 100.</p>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>Both charts put the three areas on a common scale by dividing by 2024, so a line below 100 means fewer crashes than in 2024. The
+    buttons switch between crashes, people injured and people killed, and the checkbox turns a 3-month rolling window on or off (deaths
+    are small numbers and very noisy month to month).</p>
+    <p>Inside the zone, crashes in Jan–Sep 2025 were <b>3% lower</b> than in 2024 (5,212 vs. 5,378) and injuries 3% lower. The rest of
+    the city fell by a similar 1.5%, so the zone did only slightly better. In 2026 the zone returned to its 2024 level
+    (5,387 crashes, and injuries 5% <i>above</i> 2024) while the rest of the city kept falling (−4%). The adjacent ring was higher than
+    2024 in both years (+6% in 2025). Overall, these data do not show a lasting safety gain inside the zone relative to the rest of NYC.</p>
+  </div>
+  <details class="code" data-src="js/q7.js"><summary>Show the D3 code (js/q7.js)</summary><pre><code></code></pre></details>
+</section>
+
+<!-- ============================== Q8 ============================== -->
+<section class="q" id="q8">
+  <div class="qnum">Question 8</div>
+  <div class="question">Putting everything together, which areas gained the most and which carried the costs?</div>
+  <div class="viz" id="q8-viz"></div>
+  <p class="viz-caption">Data: <code>q8_nta_summary.csv</code>, joined from the Q4–Q7 outputs. Every column is signed so that positive = benefit
+    (for safety, a 10% drop in crashes is +10). Each column has its own color scale; hatched = no data.</p>
+  <div class="desc">
+    <h3>What the visualization shows</h3>
+    <p>The matrix has one row per neighborhood inside the zone or within 2 km of it and one column per outcome. Blue cells are
+    improvements, red cells are costs. Clicking a column header sorts the rows by that outcome and colors the map with it; the borough
+    filter limits both views.</p>
+    <p>The clearest pattern is by column rather than by place: <b>subway use</b> went up almost everywhere (+4% to +22%), <b>Citi Bike
+    trips into the zone</b> went down almost everywhere, and <b>speed</b> improved inside the zone (+0.27 mph) but not in the adjacent
+    ring (−0.14 mph). <b>Safety</b> is the column that separates neighborhoods.</p>
+    <ul>
+      <li><b>Gained the most:</b> Lower East Side, Tribeca–Civic Center, Gramercy and Chelsea–Hudson Yards inside the zone (11–19% fewer
+        crashes plus more subway use and faster taxis), and Queensbridge–Ravenswood, Greenpoint, South Williamsburg and Upper West
+        Side–Lincoln Square outside it (12–21% fewer crashes and 4–22% more subway entries).</li>
+      <li><b>Carried costs:</b> Central Park, Brooklyn Heights, the Brooklyn Navy Yard and Downtown Brooklyn–DUMBO, all in the adjacent
+        ring, had 12–26% more crashes, fewer Citi Bike trips into the zone and slightly slower taxis. Inside the zone, Stuyvesant Town,
+        East Village and Greenwich Village also had more crashes (16–27%) even though traffic there got faster.</li>
+    </ul>
+    <p>Several of these neighborhoods have only a few hundred crashes a year, so a 20% swing can be a few dozen crashes; the hover
+    tooltip shows the underlying change for each cell.</p>
+  </div>
+  <details class="code" data-src="js/q8.js"><summary>Show the D3 code (js/q8.js)</summary><pre><code></code></pre></details>
+</section>
+
+<section class="q" id="limits">
+  <h2>Data gaps and limitations</h2>
+  <ul>
+    <li><b>Correlation, not causation.</b> Return-to-office trends, weather, construction and fare changes all coincide with 2025.</li>
+    <li><b>No pre-toll baseline</b> in the CRZ entry or excluded-roadway counts; before/after views rely on tunnel crossings (Q2) and speeds (Q4).</li>
+    <li><b>Speeds</b> come from taxi/FHV trips, end in August 2025 in our download, and have no peak/off-peak split.</li>
+    <li><b>Zone outline</b> on the maps is hand-digitized (about 100 m accuracy) and entry-point locations are approximate.</li>
+    <li><b>Crashes</b> without coordinates (about 6%) are dropped; deaths are small counts and noisy.</li>
+    <li><b>Citi Bike</b> and subway origin–destination comparisons use a single month (October) in each year.</li>
+  </ul>
+  <p><b>Next steps for the final:</b> load the official MTA geofence, add a short guided narrative between sections, refine colors and
+  labels after user feedback, and add a table view for each chart.</p>
+</section>
+
+<section class="q" id="ai">
+  <h2>AI use statement</h2>
+  <div class="ai">
+    <p>Per the course AI policy, this is where and how we used AI in Milestone 3. The same statement is in the repository README.</p>
+    <ul>
+      <li><b>Model:</b> Claude (Anthropic), used through the Claude app, Claude Opus 5.5.</li>
+      <li><b>Coding:</b> Claude wrote the first drafts of the D3 code in <code>milestone3/js/</code> (all eight charts and the shared
+        helpers in <code>common.js</code>), the page layout and CSS, and <code>scripts/m3_build_geo.py</code>, which converts the
+        2020 NTA boundaries to GeoJSON. We specified which chart, encodings and interactions each question needed (from our Milestone 2
+        sketches), ran the page, checked numbers in the tooltips against the CSVs, and asked for fixes where charts were wrong or unclear.</li>
+      <li><b>Writing:</b> Claude drafted the “What the visualization shows” paragraphs from summary numbers computed from our processed
+        tables, and this page's introduction. We reviewed every number and edited the wording.</li>
+      <li><b>Not AI:</b> the choice of questions, datasets and processing rules (Milestones 1–2), the hand-drawn sketches, and the
+        interpretation decisions (e.g., treating all results as associations) are the team's own work.</li>
+      <li><b>Split of work:</b> roughly, most of the first-draft code and text came from Claude; the team's work was design decisions,
+        data preparation (Milestone 2 pipelines), testing and verification, and editing.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>Team cyro · Milestone 3 · Milestone 2 report: <a href="../report/Team_cyro_Milestone2.pdf">report/Team_cyro_Milestone2.pdf</a></footer>
+</main>
+
+<script src="vendor/d3.v7.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/q1.js"></script>
+<script src="js/q2.js"></script>
+<script src="js/q3.js"></script>
+<script src="js/q4.js"></script>
+<script src="js/q5.js"></script>
+<script src="js/q6.js"></script>
+<script src="js/q7.js"></script>
+<script src="js/q8.js"></script>
+<script>
+  // "Show the D3 code" panels: load each chart's source file the first time the panel is opened
+  document.querySelectorAll("details.code").forEach(det => {
+    det.addEventListener("toggle", async () => {
+      const code = det.querySelector("code");
+      if (!det.open || code.dataset.loaded) return;
+      code.textContent = "Loading…";
+      try {
+        code.textContent = await (await fetch(det.dataset.src)).text();
+        code.dataset.loaded = 1;
+      } catch (e) { code.textContent = "Could not load " + det.dataset.src + " – open it from the repository."; }
+    });
+  });
+</script>
+</body>
+</html>
