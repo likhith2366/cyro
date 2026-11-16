@@ -205,12 +205,10 @@ Several of these neighborhoods have only a few hundred crashes a year, so a 20% 
 
 <div class="ai">
 
-Per the course AI policy, this is where and how we used AI in Milestone 3. The same statement is in the repository README.
+Per the course AI policy, we’re documenting how our team used Claude Opus 5.5 (Anthropic) through the Claude app in Milestone 3. This statement also appears in the repository README.
 
-- **Model:** Claude (Anthropic), used through the Claude app, Claude Opus 5.5.
-- **Coding:** Claude wrote the first drafts of the D3 code in `milestone3/js/` (all eight charts and the shared helpers in `common.js`), the page layout and CSS, and `scripts/m3_build_geo.py`, which converts the 2020 NTA boundaries to GeoJSON. We specified which chart, encodings and interactions each question needed (from our Milestone 2 sketches), ran the page, checked numbers in the tooltips against the CSVs, and asked for fixes where charts were wrong or unclear.
-- **Writing:** Claude drafted the “What the visualization shows” paragraphs from summary numbers computed from our processed tables, and this page's introduction. We reviewed every number and edited the wording.
-- **Not AI:** the choice of questions, datasets and processing rules (Milestones 1–2), the hand-drawn sketches, and the interpretation decisions (e.g., treating all results as associations) are the team's own work.
-- **Split of work:** roughly, most of the first-draft code and text came from Claude; the team's work was design decisions, data preparation (Milestone 2 pipelines), testing and verification, and editing.
+- **Project design and data preparation.** Our team chose the research questions and datasets, defined the processing rules, and built the data pipelines in Milestones 1 and 2. We used our hand-drawn Milestone 2 sketches to specify the chart type, visual encodings, and interactions for each question.
+- **Implementation and testing.** Claude wrote the first drafts of all eight D3 charts in `milestone3/js/`, the shared helpers in `common.js`, the page layout and CSS, and `scripts/m3_build_geo.py`, which converts the 2020 NTA boundaries to GeoJSON. We ran the page, checked tooltip values against the CSVs, and asked Claude to revise charts when we found errors or unclear behavior.
+- **Analysis and writing.** Our team decided how to interpret the results, including describing the relationships we observed as associations. Claude drafted the introduction and the “What the visualization shows” paragraphs using summary numbers computed from our processed tables. We verified every number and edited the wording to reflect our interpretation.
 
 </div>
