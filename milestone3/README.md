@@ -45,6 +45,12 @@ On January 5, 2025 New York started charging most vehicles a toll to enter Manha
 
 Our project uses public MTA, NYPD, Citi Bike and NYC Planning data to let a reader look at the evidence directly: how many vehicles still enter the zone and when (Q1–Q3), whether traffic got faster and safer (Q4, Q5, Q7), where trips moved to (Q6), and which neighborhoods gained or paid (Q8). Because 2025 also brought return-to-office changes, weather and construction, we always compare the zone with the area just outside it and with the rest of the city, and we describe differences as associations, not proof that the toll caused them.
 
+## Which pipeline this page uses
+
+Milestone 2 left us with two parallel pipelines. For Milestone 3 and the rest of the project, **Pipeline B is the authoritative one**: every area label on this page means *inside the zone*, *adjacent* (within 2 km of our hand-digitized zone outline) or *rest of NYC*, and the before/after comparison for Q2 is the Manhattan-bound tunnel crossings. Pipeline A's tables and its 1.5 km adjacency are not used here, with one exception we flag rather than hide: the Q6 subway origin–destination table (`q6_subway_od_into_crz_by_neighborhood.csv`) was built by Pipeline A, so its "into the zone" test uses the official MTA geofence instead of our outline. The two outlines differ by about 100 m, which does not change which neighborhoods are origins, but the Q6 subway and Citi Bike layers are therefore not pixel-identical in their definition of the zone boundary. Replacing that table with a Pipeline B version is on our list for Milestone 4.
+
+**Build priority.** We built the shared views first — entries (Q1–Q3), safety (Q5 and Q7, which share one collision table) and transit (Q6) — because Q8 is assembled from their outputs. Q4 reuses the Milestone 2 speed table unchanged. If time runs short before the final, Q8's neighborhood matrix is the view we would simplify, not the three shared ones.
+
 ## What changed since Milestone 2
 
 - **Q1:** the sketch's weekday/weekend toggle became a tolled / excluded-roadway toggle, because our processed table only covers weekdays; the 10-minute hover profile became an hourly profile panel (click a row).
@@ -57,7 +63,7 @@ Our project uses public MTA, NYPD, Citi Bike and NYC Planning data to let a read
 
 ![Q1 visualization](screenshots/q1.png)
 
-*Data: MTA Congestion Relief Zone Vehicle Entries, average over 452 non-holiday weekdays, Jan 5, 2025 – Oct 2026 (`q1_weekday_profile.csv`).*
+*Data: MTA Congestion Relief Zone Vehicle Entries, average over 452 non-holiday weekdays from Jan 5, 2025 to **Oct 23, 2026**, the last weekday in our extraction (`q1_weekday_profile.csv`). Federal holidays are excluded from the denominator, but this only removes them from the average: the MTA applies the same 5 a.m.–9 p.m. peak window on a holiday weekday as on any other weekday, so the* peak *and* overnight *labels used in Q2 and Q3 are unaffected by the holiday flag.*
 
 **D3 code:** [`milestone3/js/q1.js`](js/q1.js) (uses helpers in [`js/common.js`](js/common.js))
 
@@ -93,6 +99,10 @@ Because zone entries only start on toll day, the second chart provides the befor
 
 ## Q3. Are drivers avoiding the toll by using the FDR Drive and the West Side Highway instead?
 
+### Observed excluded-roadway use, by entry point and month
+
+The question above is the one we registered in our proposal, but the data can only answer a narrower version of it. These counts show *how much* traffic enters on the untolled roadways, not *why*: a vehicle on the FDR Drive may be avoiding the toll, or may simply be driving up the east side. We therefore report observed excluded-roadway use and its trend, and leave motive out of it.
+
 ![Q3 visualization](screenshots/q3.png)
 
 *Data: MTA CRZ Vehicle Entries, tolled vs. excluded-roadway entries (`q1_weekday_profile.csv`, `q3_excluded_share.csv`). Entry-point locations are approximate.*
@@ -103,9 +113,9 @@ Because zone entries only start on toll day, the second chart provides the befor
 
 Each circle on the map is an entry point; its size is the weekday volume and the orange slice is the share of vehicles that entered on an **excluded roadway** (they stay on the FDR Drive or West Side Highway and do not pay). Clicking a circle filters the line chart to that entry point; the dashed line marks its January 2025 level.
 
-About **11.5% of all entries** are on excluded roadways. If drivers were increasingly detouring around the toll, this share would climb over time. It does not: it moves between about 11% and 12.4% with a seasonal bump each August, and in October 2026 it was 11.4%, almost the same as in January 2025. The excluded share is high at the Brooklyn Bridge (about 42%) and the FDR Drive (about 36%), but those shares are also stable.
+About **11.5% of all entries** are on excluded roadways. A growing share would be consistent with more traffic shifting onto the untolled roads over time; the share does not grow. It moves between about 11% and 12.4% with a seasonal bump each August, and in October 2026 it was 11.4%, almost the same as in January 2025. The excluded share is high at the Brooklyn Bridge (about 42%) and the FDR Drive (about 36%), but those shares are also stable.
 
-**Limitation:** excluded-roadway counts start on toll day, so this view can show whether avoidance grew *after* the toll, but not how many drivers switched to the FDR or West Side Highway on day one compared with 2024.
+**Limitation:** excluded-roadway counts start on toll day, so this view can show whether excluded-roadway use grew *after* the toll, but not how many drivers were already using the FDR or West Side Highway in 2024. A stable share is also consistent with a one-time shift that happened on day one and then held steady, which these data cannot distinguish from no shift at all.
 
 ## Q4. Has traffic inside the zone become faster compared with 2019–2024, and compared with the rest of the city?
 
@@ -113,7 +123,7 @@ About **11.5% of all entries** are on excluded roadways. If drivers were increas
 
 ![Q4 visualization](screenshots/q4-did.png)
 
-*Data: MTA CBD Taxi and FHV Speeds, monthly, Oct 2019 – Aug 2025 (`m2_q4_speeds_monthly.csv`). Speeds are computed from taxi and for-hire-vehicle trips, not all traffic.*
+*Data: MTA CBD Taxi and FHV Speeds, monthly, Oct 2019 – Aug 2025 (`m2_q4_speeds_monthly.csv`). Speeds are computed from taxi and for-hire-vehicle trips, not all traffic. We checked the publisher's definition before labelling the third series "rest of the city": the dataset describes its three zones as the Manhattan CBD, the areas* adjacent to *the CBD, and* the rest of New York City, *so `Greater NYC` is a separate area that excludes both the zone and its adjacent ring rather than a citywide average that contains them.*
 
 **D3 code:** [`milestone3/js/q4.js`](js/q4.js) (uses helpers in [`js/common.js`](js/common.js))
 
@@ -136,6 +146,8 @@ Inside-zone speeds fell steadily from about 12 mph in 2020 to **8.7 mph in 2024*
 The map colors each neighborhood inside the zone or within 2 km of it by the change in crashes (or injuries); red means more, blue means fewer. The ranked bars on the right list the same neighborhoods, with a dot marking whether each is inside the zone or adjacent. Hovering a bar highlights it on the map and vice versa.
 
 There is no general worsening just outside the zone. Summed over the 12 adjacent neighborhoods, crashes went from 4,605 to 4,535 (**−1.5%**) and injuries from 2,318 to 2,088 (**−10%**). It is uneven, though: 7 of the 12 adjacent neighborhoods had more crashes, led by **Central Park (+26%)**, **Brooklyn Heights (+24%)** and the Brooklyn Navy Yard (+15%), while Queensbridge–Ravenswood (−21%) and Greenpoint (−12%) improved. Traffic speed in the adjacent area changed little (−0.14 mph, shown in the callout), so there is no sign of a large traffic spillover either.
+
+**Read the percentages with the counts.** The tooltip gives both, because these are small areas: Central Park's +26% is a change of a few dozen crashes, not hundreds, so one busy month moves it noticeably. Roughly 6% of NYPD crash records have no coordinates and are dropped before the neighborhood join, which means every count here is an undercount. That matters for this view in particular: we cannot tell whether the dropped records fall evenly across neighborhoods, so a single neighborhood's percentage is less reliable than the adjacent-ring total, which is what we lean on above.
 
 ## Q6. Did more people take the subway or Citi Bike into the zone, and from which neighborhoods?
 
@@ -175,7 +187,9 @@ Inside the zone, crashes in Jan–Sep 2025 were **3% lower** than in 2024 (5,212
 
 ![Q8 visualization](screenshots/q8.png)
 
-*Data: `q8_nta_summary.csv`, joined from the Q4–Q7 outputs. Every column is signed so that positive = benefit (for safety, a 10% drop in crashes is +10). Each column has its own color scale; hatched = no data.*
+*Data: `q8_nta_summary.csv`, joined from the Q4–Q7 outputs. Each column has its own color scale and its own unit (% for safety, subway and Citi Bike; mph for speed); hatched = no data.* **Speed is the one value for the whole area** *(zone, adjacent ring or rest of NYC) repeated for every neighborhood in it, so that column is much coarser than the others and should not be read as a per-neighborhood measurement.*
+
+**What we mean by "benefit".** Blue means the number moved in the direction the policy was argued for: fewer crashes, higher subway and Citi Bike use, higher speeds. That is our interpretation, not something in the data, and it is debatable for the transit columns — more subway entries in a neighborhood may mean residents switched from driving, or simply that more people live and travel there now, and for a resident a crowded platform may not feel like a gain. The columns are also not comparable to each other: a +10% safety change and a +10% subway change are different kinds of thing, which is why each has its own legend. Nothing in this matrix shows that the toll *caused* any of these changes.
 
 **D3 code:** [`milestone3/js/q8.js`](js/q8.js) (uses helpers in [`js/common.js`](js/common.js))
 
@@ -185,10 +199,10 @@ The matrix has one row per neighborhood inside the zone or within 2 km of it and
 
 The clearest pattern is by column rather than by place: **subway use** went up almost everywhere (+4% to +22%), **Citi Bike trips into the zone** went down almost everywhere, and **speed** improved inside the zone (+0.27 mph) but not in the adjacent ring (−0.14 mph). **Safety** is the column that separates neighborhoods.
 
-- **Gained the most:** Lower East Side, Tribeca–Civic Center, Gramercy and Chelsea–Hudson Yards inside the zone (11–19% fewer crashes plus more subway use and faster taxis), and Queensbridge–Ravenswood, Greenpoint, South Williamsburg and Upper West Side–Lincoln Square outside it (12–21% fewer crashes and 4–22% more subway entries).
-- **Carried costs:** Central Park, Brooklyn Heights, the Brooklyn Navy Yard and Downtown Brooklyn–DUMBO, all in the adjacent ring, had 12–26% more crashes, fewer Citi Bike trips into the zone and slightly slower taxis. Inside the zone, Stuyvesant Town, East Village and Greenwich Village also had more crashes (16–27%) even though traffic there got faster.
+- **Mostly improving:** Lower East Side, Tribeca–Civic Center, Gramercy and Chelsea–Hudson Yards inside the zone (11–19% fewer crashes plus more subway use and faster taxis), and Queensbridge–Ravenswood, Greenpoint, South Williamsburg and Upper West Side–Lincoln Square outside it (12–21% fewer crashes and 4–22% more subway entries).
+- **Mostly worsening:** Central Park, Brooklyn Heights, the Brooklyn Navy Yard and Downtown Brooklyn–DUMBO, all in the adjacent ring, had 12–26% more crashes, fewer Citi Bike trips into the zone and slightly slower taxis. Inside the zone, Stuyvesant Town, East Village and Greenwich Village also had more crashes (16–27%) even though traffic there got faster.
 
-Several of these neighborhoods have only a few hundred crashes a year, so a 20% swing can be a few dozen crashes; the hover tooltip shows the underlying change for each cell.
+We deliberately do not read this as a list of winners and losers. These are 2025-versus-2024 differences in neighborhoods that differ in many other ways, and several have only a few hundred crashes a year, so a 20% swing can be a few dozen crashes; the hover tooltip shows the underlying counts for each cell. A neighborhood appearing in the second group did not necessarily pay a price *for* the toll.
 
 ## Data gaps and limitations
 

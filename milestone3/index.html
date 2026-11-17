@@ -40,6 +40,18 @@
   <code>data/processed/</code> that we produced and documented in Milestone 2. Hover any mark for exact numbers. Each section
   ends with a <b>“Show the D3 code”</b> panel that loads that chart's source file. How to run this page locally is in
   <code>milestone3/README.md</code>.</p>
+  <h3>Which pipeline this page uses</h3>
+  <p>Milestone 2 left us with two parallel pipelines. For Milestone 3 and the rest of the project, <b>Pipeline B is the
+  authoritative one</b>: every area label on this page means <i>inside the zone</i>, <i>adjacent</i> (within 2 km of our
+  hand-digitized zone outline) or <i>rest of NYC</i>, and the before/after comparison for Q2 is the Manhattan-bound tunnel
+  crossings. Pipeline A's tables and its 1.5 km adjacency are not used here, with one exception we flag rather than hide:
+  the Q6 subway origin–destination table (<code>q6_subway_od_into_crz_by_neighborhood.csv</code>) was built by Pipeline A, so
+  its "into the zone" test uses the official MTA geofence instead of our outline. The two outlines differ by about 100 m, which
+  does not change which neighborhoods are origins, but the Q6 subway and Citi Bike layers are therefore not pixel-identical in
+  their definition of the zone boundary. Replacing that table with a Pipeline B version is on our list for Milestone 4.</p>
+  <p><b>Build priority.</b> We built the shared views first — entries (Q1–Q3), safety (Q5 and Q7, which share one collision
+  table) and transit (Q6) — because Q8 is assembled from their outputs. Q4 reuses the Milestone 2 speed table unchanged. If
+  time runs short before the final, Q8's neighborhood matrix is the view we would simplify, not the three shared ones.</p>
   <h3>What changed since Milestone 2</h3>
   <ul>
     <li><b>Q1:</b> the sketch's weekday/weekend toggle became a tolled / excluded-roadway toggle, because our processed table
@@ -61,8 +73,11 @@
   <div class="qnum">Question 1</div>
   <div class="question">When and where do vehicles enter the zone on a typical weekday, and which entry points are the busiest?</div>
   <div class="viz" id="q1-viz"></div>
-  <p class="viz-caption">Data: MTA Congestion Relief Zone Vehicle Entries, average over 452 non-holiday weekdays, Jan 5, 2025 – Oct 2026
-    (<code>q1_weekday_profile.csv</code>).</p>
+  <p class="viz-caption">Data: MTA Congestion Relief Zone Vehicle Entries, average over 452 non-holiday weekdays from Jan 5, 2025 to
+    <b>Oct 23, 2026</b>, the last weekday in our extraction (<code>q1_weekday_profile.csv</code>). Federal holidays are excluded from
+    the denominator, but note that this only removes them from the average: the MTA applies the same 5 a.m.–9 p.m. peak window on a
+    holiday weekday as on any other weekday, so the <i>peak</i> and <i>overnight</i> labels used in Q2 and Q3 are unaffected by the
+    holiday flag.</p>
   <div class="desc">
     <h3>What the visualization shows</h3>
     <p>The heatmap has one row per entry point (sorted by daily volume) and one column per hour; darker cells mean more vehicles.
@@ -117,6 +132,11 @@
 <section class="q" id="q3">
   <div class="qnum">Question 3</div>
   <div class="question">Are drivers avoiding the toll by using the FDR Drive and the West Side Highway instead?</div>
+  <h3>Observed excluded-roadway use, by entry point and month</h3>
+  <p class="data-note">The question above is the one we registered in our proposal, but the data can only answer a narrower
+  version of it. These counts show <i>how much</i> traffic enters on the untolled roadways, not <i>why</i>: a vehicle on the FDR
+  Drive may be avoiding the toll, or may simply be driving up the east side. We therefore report observed excluded-roadway use
+  and its trend, and leave motive out of it.</p>
   <div class="viz" id="q3-viz"></div>
   <p class="viz-caption">Data: MTA CRZ Vehicle Entries, tolled vs. excluded-roadway entries (<code>q1_weekday_profile.csv</code>,
     <code>q3_excluded_share.csv</code>). Entry-point locations are approximate.</p>
@@ -125,12 +145,13 @@
     <p>Each circle on the map is an entry point; its size is the weekday volume and the orange slice is the share of vehicles that
     entered on an <b>excluded roadway</b> (they stay on the FDR Drive or West Side Highway and do not pay). Clicking a circle filters
     the line chart to that entry point; the dashed line marks its January 2025 level.</p>
-    <p>About <b>11.5% of all entries</b> are on excluded roadways. If drivers were increasingly detouring around the toll, this share
-    would climb over time. It does not: it moves between about 11% and 12.4% with a seasonal bump each August, and in October 2026 it
-    was 11.4%, almost the same as in January 2025. The excluded share is high at the Brooklyn Bridge (about 42%) and the FDR Drive
-    (about 36%), but those shares are also stable.</p>
-    <p><b>Limitation:</b> excluded-roadway counts start on toll day, so this view can show whether avoidance grew <i>after</i> the toll,
-    but not how many drivers switched to the FDR or West Side Highway on day one compared with 2024.</p>
+    <p>About <b>11.5% of all entries</b> are on excluded roadways. A growing share would be consistent with more traffic shifting onto
+    the untolled roads over time; the share does not grow. It moves between about 11% and 12.4% with a seasonal bump each August, and in
+    October 2026 it was 11.4%, almost the same as in January 2025. The excluded share is high at the Brooklyn Bridge (about 42%) and the
+    FDR Drive (about 36%), but those shares are also stable.</p>
+    <p><b>Limitation:</b> excluded-roadway counts start on toll day, so this view can show whether excluded-roadway use grew <i>after</i>
+    the toll, but not how many drivers were already using the FDR or West Side Highway in 2024. A stable share is also consistent with a
+    one-time shift that happened on day one and then held steady, which these data cannot distinguish from no shift at all.</p>
   </div>
   <details class="code" data-src="js/q3.js"><summary>Show the D3 code (js/q3.js)</summary><pre><code></code></pre></details>
 </section>
@@ -141,7 +162,10 @@
   <div class="question">Has traffic inside the zone become faster compared with 2019–2024, and compared with the rest of the city?</div>
   <div class="viz" id="q4-viz"></div>
   <p class="viz-caption">Data: MTA CBD Taxi and FHV Speeds, monthly, Oct 2019 – Aug 2025 (<code>m2_q4_speeds_monthly.csv</code>).
-    Speeds are computed from taxi and for-hire-vehicle trips, not all traffic.</p>
+    Speeds are computed from taxi and for-hire-vehicle trips, not all traffic. We checked the publisher's definition before labelling
+    the third series "rest of the city": the dataset describes its three zones as the Manhattan CBD, the areas <i>adjacent to</i> the
+    CBD, and <i>the rest of New York City</i>, so <code>Greater NYC</code> is a separate area that excludes both the zone and its
+    adjacent ring rather than a citywide average that contains them.</p>
   <h3>Difference-in-differences: change vs. 2024 minus the rest-of-city change</h3>
   <div class="viz" id="q4-viz-did"></div>
   <div class="desc">
@@ -175,6 +199,11 @@
     had more crashes, led by <b>Central Park (+26%)</b>, <b>Brooklyn Heights (+24%)</b> and the Brooklyn Navy Yard (+15%), while
     Queensbridge–Ravenswood (−21%) and Greenpoint (−12%) improved. Traffic speed in the adjacent area changed little (−0.14 mph,
     shown in the callout), so there is no sign of a large traffic spillover either.</p>
+    <p><b>Read the percentages with the counts.</b> The tooltip gives both, because these are small areas: Central Park's +26% is a
+    change of a few dozen crashes, not hundreds, so one busy month moves it noticeably. Roughly 6% of NYPD crash records have no
+    coordinates and are dropped before the neighborhood join, which means every count here is an undercount. That matters for this
+    view in particular: we cannot tell whether the dropped records fall evenly across neighborhoods, so a single neighborhood's
+    percentage is less reliable than the adjacent-ring total, which is what we lean on above.</p>
   </div>
   <details class="code" data-src="js/q5.js"><summary>Show the D3 code (js/q5.js)</summary><pre><code></code></pre></details>
 </section>
@@ -232,8 +261,16 @@
   <div class="qnum">Question 8</div>
   <div class="question">Putting everything together, which areas gained the most and which carried the costs?</div>
   <div class="viz" id="q8-viz"></div>
-  <p class="viz-caption">Data: <code>q8_nta_summary.csv</code>, joined from the Q4–Q7 outputs. Every column is signed so that positive = benefit
-    (for safety, a 10% drop in crashes is +10). Each column has its own color scale; hatched = no data.</p>
+  <p class="viz-caption">Data: <code>q8_nta_summary.csv</code>, joined from the Q4–Q7 outputs. Each column has its own color scale and
+    its own unit (% for safety, subway and Citi Bike; mph for speed); hatched = no data. <b>Speed is the one value for the whole area</b>
+    (zone, adjacent ring or rest of NYC) repeated for every neighborhood in it, so that column is much coarser than the others and should
+    not be read as a per-neighborhood measurement.</p>
+  <p class="data-note"><b>What we mean by "benefit".</b> Blue means the number moved in the direction the policy was argued for: fewer
+    crashes, higher subway and Citi Bike use, higher speeds. That is our interpretation, not something in the data, and it is debatable
+    for the transit columns — more subway entries in a neighborhood may mean residents switched from driving, or simply that more people
+    live and travel there now, and for a resident a crowded platform may not feel like a gain. The columns are also not comparable to each
+    other: a +10% safety change and a +10% subway change are different kinds of thing, which is why each has its own legend. Nothing in
+    this matrix shows that the toll <i>caused</i> any of these changes.</p>
   <div class="desc">
     <h3>What the visualization shows</h3>
     <p>The matrix has one row per neighborhood inside the zone or within 2 km of it and one column per outcome. Blue cells are
@@ -243,15 +280,17 @@
     trips into the zone</b> went down almost everywhere, and <b>speed</b> improved inside the zone (+0.27 mph) but not in the adjacent
     ring (−0.14 mph). <b>Safety</b> is the column that separates neighborhoods.</p>
     <ul>
-      <li><b>Gained the most:</b> Lower East Side, Tribeca–Civic Center, Gramercy and Chelsea–Hudson Yards inside the zone (11–19% fewer
+      <li><b>Mostly improving:</b> Lower East Side, Tribeca–Civic Center, Gramercy and Chelsea–Hudson Yards inside the zone (11–19% fewer
         crashes plus more subway use and faster taxis), and Queensbridge–Ravenswood, Greenpoint, South Williamsburg and Upper West
         Side–Lincoln Square outside it (12–21% fewer crashes and 4–22% more subway entries).</li>
-      <li><b>Carried costs:</b> Central Park, Brooklyn Heights, the Brooklyn Navy Yard and Downtown Brooklyn–DUMBO, all in the adjacent
+      <li><b>Mostly worsening:</b> Central Park, Brooklyn Heights, the Brooklyn Navy Yard and Downtown Brooklyn–DUMBO, all in the adjacent
         ring, had 12–26% more crashes, fewer Citi Bike trips into the zone and slightly slower taxis. Inside the zone, Stuyvesant Town,
         East Village and Greenwich Village also had more crashes (16–27%) even though traffic there got faster.</li>
     </ul>
-    <p>Several of these neighborhoods have only a few hundred crashes a year, so a 20% swing can be a few dozen crashes; the hover
-    tooltip shows the underlying change for each cell.</p>
+    <p>We deliberately do not read this as a list of winners and losers. These are 2025-versus-2024 differences in neighborhoods that
+    differ in many other ways, and several have only a few hundred crashes a year, so a 20% swing can be a few dozen crashes; the hover
+    tooltip shows the underlying counts for each cell. A neighborhood appearing in the second group did not necessarily pay a price
+    <i>for</i> the toll.</p>
   </div>
   <details class="code" data-src="js/q8.js"><summary>Show the D3 code (js/q8.js)</summary><pre><code></code></pre></details>
 </section>
