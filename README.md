@@ -41,14 +41,15 @@ same domain questions from the same public datasets; they differ in some definit
 > visualizations, and for the rest of the project. Everywhere we say *adjacent*, we mean within 2 km of the
 > hand-digitized zone outline, and the Q2 before/after comparison is the Manhattan-bound tunnel crossings.
 > Pipeline A is kept for reference only — it produced an earlier draft report and the Vega-Lite sketches — and
-> its tables and its 1.5 km adjacency are **not** mixed into Milestone 3, with one flagged exception: the Q6
-> subway origin–destination table (`q6_subway_od_into_crz_by_neighborhood.csv`) is a Pipeline A output, so its
-> "into the zone" test uses the official MTA geofence rather than our outline. This is stated on the Milestone 3
-> page as well; rebuilding that table under Pipeline B is a Milestone 4 task.
+> its tables and its 1.5 km adjacency are **not** used in Milestone 3. The Q6 subway origin–destination table
+> was first built by Pipeline A; it has been rebuilt under Pipeline B (`scripts/q6_subway_od.py` →
+> `q6_subway_od_into_zone.csv`) and is identical row for row, since no subway station lies between the two
+> zone outlines. Pipeline B also includes `scripts/q2_overlap_check.py`, which checks that the tunnel
+> crossings track zone entries over the period both feeds cover (see Q2 on the Milestone 3 page).
 
 | | Pipeline A (reference) | Pipeline B (authoritative) |
 |---|---|---|
-| Scripts | `scripts/fetch_data.py`, `process_citibike.py`, `process_data.py`, `make_sketches.py`, `build_report.py` (helpers: `scripts/common.py`) | `scripts/q1_q3_crz_entries.py`, `q2_bt_crossings.py`, `q4_speeds.py`, `q5_q7_collisions.py`, `q6_subway.py`, `q6_citibike.py`, `q8_summary.py` (helpers: `scripts/m2_common.py`) |
+| Scripts | `scripts/fetch_data.py`, `process_citibike.py`, `process_data.py`, `make_sketches.py`, `build_report.py` (helpers: `scripts/common.py`) | `scripts/q1_q3_crz_entries.py`, `q2_bt_crossings.py`, `q2_overlap_check.py`, `q4_speeds.py`, `q5_q7_collisions.py`, `q6_subway.py`, `q6_subway_od.py`, `q6_citibike.py`, `q8_summary.py` (helpers: `scripts/m2_common.py`) |
 | Processed tables | `data/processed/q1_entry_point_summary.csv`, `q2_vmt_monthly.csv`, `q3_excluded_share_monthly.csv`, `q4_speeds_monthly.csv`, `q5_q7_*`, `q6_*_into_crz_*`, `q6_subway_monthly_by_area.csv`, `q8_area_scorecard.csv`, ... | `data/processed/q1_weekday_profile.csv`, `q2_weekly_by_class.csv`, `q2_bt_yoy.csv`, `q3_excluded_share.csv`, `m2_q4_speeds_monthly.csv`, `q5_nta_crash_change.csv`, `q6_subway_monthly.csv`, `q6_citibike_origins.csv`, `q7_monthly_by_area.csv`, `q8_nta_summary.csv`; samples in `output/samples/` |
 | Sketches | Vega-Lite: `sketches/*.vl.json` + PNG, viewable in `sketches/index.html` | Hand-drawn: `sketches/hand_drawn/q1_sketch.png` ... `q8_sketch.png` |
 | Adjacent area | within 1.5 km of the MTA geofence | within 2 km of a hand-digitized zone outline |

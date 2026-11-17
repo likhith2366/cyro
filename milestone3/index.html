@@ -44,11 +44,11 @@
   <p>Milestone 2 left us with two parallel pipelines. For Milestone 3 and the rest of the project, <b>Pipeline B is the
   authoritative one</b>: every area label on this page means <i>inside the zone</i>, <i>adjacent</i> (within 2 km of our
   hand-digitized zone outline) or <i>rest of NYC</i>, and the before/after comparison for Q2 is the Manhattan-bound tunnel
-  crossings. Pipeline A's tables and its 1.5 km adjacency are not used here, with one exception we flag rather than hide:
-  the Q6 subway origin–destination table (<code>q6_subway_od_into_crz_by_neighborhood.csv</code>) was built by Pipeline A, so
-  its "into the zone" test uses the official MTA geofence instead of our outline. The two outlines differ by about 100 m, which
-  does not change which neighborhoods are origins, but the Q6 subway and Citi Bike layers are therefore not pixel-identical in
-  their definition of the zone boundary. Replacing that table with a Pipeline B version is on our list for Milestone 4.</p>
+  crossings. No Pipeline A table or its 1.5 km adjacency is used on this page. The Q6 subway origin–destination table was
+  originally a Pipeline A output (built with the official MTA geofence), so we rebuilt it under Pipeline B's outline
+  (<code>scripts/q6_subway_od.py</code> → <code>q6_subway_od_into_zone.csv</code>) and compared the two: they are identical,
+  row for row, because no subway station lies in the roughly 100 m strip where the two outlines disagree. The chart now reads
+  the Pipeline B table.</p>
   <p><b>Build priority.</b> We built the shared views first — entries (Q1–Q3), safety (Q5 and Q7, which share one collision
   table) and transit (Q6) — because Q8 is assembled from their outputs. Q4 reuses the Milestone 2 speed table unchanged. If
   time runs short before the final, Q8's neighborhood matrix is the view we would simplify, not the three shared ones.</p>
@@ -124,6 +124,25 @@
     at the <b>Hugh L. Carey Tunnel were 3.4% lower in 2025</b> than in 2024 and at the <b>Queens Midtown Tunnel 0.9% lower</b>.
     The drop was largest in the first months (−7% in February at both tunnels) and smaller later in the year, so the change is
     real but modest at these two facilities.</p>
+    <p><b>Can the tunnel counts stand in for zone entries?</b> Only if the two sources count the same traffic. They overlap from
+    February 2025 onward (January is partial in the zone feed), so we compared them month by month at the two tunnels
+    (<code>scripts/q2_overlap_check.py</code>, <code>q2_overlap_check.csv</code>):</p>
+    <table class="simple">
+      <tr><th>Tunnel</th><th>Months</th><th>Tunnel crossings per zone entry</th><th>Month-to-month spread</th><th>Correlation</th></tr>
+      <tr><td>Queens Midtown</td><td>21</td><td>0.98</td><td>1.4%</td><td>0.98</td></tr>
+      <tr><td>Hugh L. Carey</td><td>21</td><td>0.98</td><td>2.3%</td><td>0.96</td></tr>
+    </table>
+    <p>Both tunnels record about 98 crossings for every 100 zone entries, and that ratio barely moves from month to month, so the
+    tunnel series tracks zone entries closely at these two facilities. One detail matters: at the Carey Tunnel the ratio is 1.44 if
+    you compare against tolled entries alone, because about a third of its traffic exits straight onto the untolled West Side
+    Highway and FDR Drive and is recorded as an excluded-roadway entry. Counting those back in brings it to 0.98, matching Queens
+    Midtown. <b>Coverage limit:</b> this check validates the comparison for these two tunnels only. They carry about 14% of zone
+    entries, so the before/after result above says nothing about the other ten entry points, which have no pre-toll counts.</p>
+    <p><b>Vehicle classes.</b> The two sources classify vehicles differently, so the tunnel chart uses all classes combined rather
+    than matching them. The tunnel data has 29 axle-based codes in four groups (car, truck, bus, motorcycle); the zone data has six
+    classes. Cars and motorcycles line up, but trucks are split by axle count in one source and by single- vs. multi-unit in the
+    other, buses are only "franchise" buses in the tunnel data, and the tunnel data has no taxi/FHV class at all: a yellow cab is a
+    2-axle passenger car there. A per-class before/after comparison would therefore mix taxis into "cars", so we do not make one.</p>
   </div>
   <details class="code" data-src="js/q2.js"><summary>Show the D3 code (js/q2.js)</summary><pre><code></code></pre></details>
 </section>
@@ -214,7 +233,7 @@
   <div class="question">Did more people take the subway or Citi Bike into the zone, and from which neighborhoods?</div>
   <div class="viz" id="q6-viz"></div>
   <p class="viz-caption">Data: MTA Subway Origin-Destination Ridership Estimates (Oct 2024, Oct 2025;
-    <code>q6_subway_od_into_crz_by_neighborhood.csv</code>) and Citi Bike trip data (Oct 2024, Oct 2025; <code>q6_citibike_origins.csv</code>).</p>
+    <code>q6_subway_od_into_zone.csv</code>) and Citi Bike trip data (Oct 2024, Oct 2025; <code>q6_citibike_origins.csv</code>).</p>
   <h3>Subway fare entries by station area, each month vs. the same month of 2024</h3>
   <div class="viz" id="q6-viz-trend"></div>
   <p class="viz-caption">Data: MTA Subway Hourly Ridership (<code>q6_subway_by_area.csv</code>). Entries count where riders start, not where they go.</p>

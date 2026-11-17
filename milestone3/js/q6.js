@@ -7,7 +7,7 @@
 (async function q6() {
   const [geo, od, bike, areaTrend] = await Promise.all([
     loadGeo(),
-    d3.csv(DATA + "q6_subway_od_into_crz_by_neighborhood.csv", d => ({
+    d3.csv(DATA + "q6_subway_od_into_zone.csv", d => ({
       nta: d.nta, borough: d.borough, a: +d.avg_weekday_riders_oct2024, b: +d.avg_weekday_riders_oct2025,
     })),
     d3.csv(DATA + "q6_citibike_origins.csv", d => ({

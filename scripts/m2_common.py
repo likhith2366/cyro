@@ -102,6 +102,21 @@ ZONE_LONLAT = [
 ADJACENT_BUFFER_FT = 6562  # 2 km in EPSG:2263 feet
 
 
+def zone_polygon_lonlat():
+    """The same zone outline in lon/lat, for SoQL within_polygon() filters (shapely only)."""
+    import json
+
+    from shapely.geometry import Polygon, shape
+    from shapely.ops import unary_union
+
+    official = RAW / "crz_boundary.geojson"
+    if official.exists():
+        gj = json.loads(official.read_text())
+        feats = gj["features"] if gj.get("type") == "FeatureCollection" else [gj]
+        return unary_union([shape(f["geometry"]) for f in feats])
+    return Polygon(ZONE_LONLAT)
+
+
 def zone_polygon_2263():
     import geopandas as gpd
     from shapely.geometry import Polygon

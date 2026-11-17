@@ -1,0 +1,3 @@
+detection_group,months,mean_bt_per_zone_entry,mean_bt_per_tolled_entry,sd_ratio,cv_pct,correlation_r
+Hugh L. Carey Tunnel,21,0.98,1.438,0.022,2.3,0.96
+Queens Midtown Tunnel,21,0.981,0.981,0.013,1.4,0.983

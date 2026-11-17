@@ -5,9 +5,11 @@ cd "$(dirname "$0")/scripts"
 
 python q1_q3_crz_entries.py
 python q2_bt_crossings.py
+python q2_overlap_check.py
 python q4_speeds.py
 python q5_q7_collisions.py
 python q6_subway.py
+python q6_subway_od.py
 python q6_citibike.py
 python q8_summary.py
 
